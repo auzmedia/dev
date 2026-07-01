@@ -270,12 +270,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (langSelect) {
-        // Sayt ochilganda qiymatni rus tiliga majburiy sozlaymiz
-        langSelect.value = 'ru'; 
-        changeLanguage('ru'); // Rus tili lug'atini ishga tushirish
-        
-        // Til foydalanuvchi tomonidan o'zgartirilganda yangilash
-        langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
-    }
+if (langSelect) {
+    // Agar avval tanlangan til bo'lsa o'shani oladi, bo'lmasa 'ru' ni default qiladi
+    const savedLang = localStorage.getItem('selectedLang') || 'ru';
+    
+    langSelect.value = savedLang;
+    changeLanguage(savedLang);
+    
+    langSelect.addEventListener('change', (e) => {
+        const chosenLang = e.target.value;
+        changeLanguage(chosenLang);
+        localStorage.setItem('selectedLang', chosenLang); // Tilni brauzer xotirasiga saqlash
+    });
+}
 });
