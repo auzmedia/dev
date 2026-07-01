@@ -259,6 +259,10 @@
                         <input type="text" id="ism" placeholder="Alisher" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
                     </div>
                     <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Familiyangiz</label>
+                        <input type="text" id="familiya" placeholder="Asimov" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
+                    </div>
+                    <div>
                         <label data-i18n="form_label_phone" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Telefon raqamingiz</label>
                         <input type="tel" id="raqam" placeholder="+998" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
                     </div>
@@ -446,7 +450,7 @@
             
             const data = {
                 ism: document.getElementById('ism').value,
-                familiya: "Kiritilmadi", 
+                familiya: document.getElementById('familiya').value,
                 raqam: document.getElementById('raqam').value,
                 xizmat: document.getElementById('xizmat').value,
                 izoh: document.getElementById('izoh').value,
@@ -454,7 +458,7 @@
 
             try {
                 // Google Apps Script Web App URL manzilini shu yerga yozasiz
-                await fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', {
+                await fetch('https://script.google.com/macros/s/AKfycbx1AZAj7sLEWzLJLFcuBfapxFfiD8PAwfbC0wnwnDBDofHgIS6dgG1c85iRG2lyAYnekw/exec', {
                     method: 'POST', 
                     mode: 'no-cors',
                     headers: {'Content-Type': 'application/json'},
