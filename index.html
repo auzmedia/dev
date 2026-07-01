@@ -1,89 +1,95 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="uz" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aloshiy Dev | Premium Web Development</title>
-    <meta name="description" content="Профессиональная разработка веб-сайтов и автоматизация бизнеса под ключ.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.js"></script>
     <style>
-        :root {
-            --primary: #3b82f6;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-        body { font-family: 'Inter', sans-serif; background: #0f172a; color: white; }
-        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); }
-        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .dark { background-color: #0f172a; color: white; }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="bg-gray-50 dark:bg-slate-900 transition-all duration-500">
 
-    <header class="relative min-h-screen flex items-center justify-center p-6">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#1e3a8a_0%,_#0f172a_70%)]"></div>
-        <div class="relative z-10 text-center max-w-4xl" data-aos="fade-up">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Создаем <span class="gradient-text">цифровое будущее</span> вашего бизнеса</h1>
-            <p class="text-lg md:text-xl text-slate-400 mb-10">Профессиональная разработка сайтов, Telegram-ботов и SaaS-решений с акцентом на высокую конверсию.</p>
-            <a href="#order" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-semibold transition-transform hover:scale-105">Начать проект</a>
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center glass">
+        <div class="text-2xl font-bold">ALOSHIY.DEV</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#about" class="hover:text-blue-500">Biz haqimizda</a>
+            <a href="#services" class="hover:text-blue-500">Xizmatlar</a>
+            <a href="#portfolio" class="hover:text-blue-500">Portfolio</a>
+            <select id="lang" class="bg-transparent"><option>UZ</option><option>RU</option><option>KG</option></select>
+            <button id="themeToggle" class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full">🌓</button>
         </div>
-    </header>
+        <button id="menuBtn" class="md:hidden">☰</button>
+    </nav>
 
-    <section class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Наши услуги</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-2xl transition-all hover:translate-y-[-10px]" data-aos="fade-up">
-                    <i class="fa-solid fa-code text-4xl text-blue-500 mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-4">Web Development</h3>
-                    <p class="text-slate-400">Создание высокопроизводительных SPA и корпоративных сайтов.</p>
-                </div>
-                <div class="glass p-8 rounded-2xl transition-all hover:translate-y-[-10px]" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-robot text-4xl text-purple-500 mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-4">Telegram Bots</h3>
-                    <p class="text-slate-400">Автоматизация процессов и интеграция с Google Sheets.</p>
-                </div>
-                <div class="glass p-8 rounded-2xl transition-all hover:translate-y-[-10px]" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-rocket text-4xl text-emerald-500 mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-4">SEO & Speed</h3>
-                    <p class="text-slate-400">Оптимизация производительности и продвижение бизнеса.</p>
-                </div>
-            </div>
+    <section class="h-screen flex items-center justify-center text-center">
+        <div>
+            <h1 class="text-6xl font-bold mb-6">Kelajak Biznesingizni Yarating</h1>
+            <p class="text-xl text-gray-500 mb-10">Premium Web Dasturlash va Avtomatlashtirish</p>
+            <a href="#order" class="px-8 py-4 bg-blue-600 text-white rounded-full">Buyurtma berish</a>
         </div>
     </section>
 
-    <section id="order" class="py-20 px-6">
-        <div class="max-w-2xl mx-auto glass p-10 rounded-3xl" data-aos="zoom-in">
-            <h2 class="text-3xl font-bold mb-8 text-center">Оставить заявку</h2>
-            <form id="orderForm" class="space-y-6">
-                <input type="text" id="name" placeholder="Имя" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 outline-none focus:border-blue-500">
-                <input type="tel" id="phone" placeholder="Телефон" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 outline-none focus:border-blue-500">
-                <textarea id="comment" placeholder="Ваш проект..." class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 outline-none h-32 focus:border-blue-500"></textarea>
-                <button type="submit" id="submitBtn" class="w-full p-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition-all">Отправить</button>
-            </form>
+    <section id="services" class="py-20 px-6 grid md:grid-cols-4 gap-6">
+        <div class="glass p-8 rounded-2xl">
+            <h3 class="text-2xl font-bold">Standard</h3>
+            <ul class="my-6 space-y-2"><li>Landing Page</li><li>Mobil moslashuv</li></ul>
         </div>
+        <div class="glass p-8 rounded-2xl bg-blue-600/10 border-blue-500">
+            <h3 class="text-2xl font-bold">VIP</h3>
+            <ul class="my-6 space-y-2"><li>Standard +</li><li>Telegram Bot</li></ul>
+        </div>
+        </section>
+
+    <section id="order" class="py-20 max-w-2xl mx-auto px-6">
+        <form id="orderForm" class="grid gap-6">
+            <input type="text" id="ism" placeholder="Ism" required class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
+            <input type="text" id="familiya" placeholder="Familiya" required class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
+            <input type="tel" id="raqam" placeholder="Tel: +998..." required class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
+            <select id="xizmat" class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
+                <option>Standard</option><option>VIP</option><option>Premium</option><option>Gold</option>
+            </select>
+            <textarea id="izoh" placeholder="Izoh" class="p-4 rounded-lg bg-white dark:bg-slate-800 border"></textarea>
+            <button type="submit" id="submitBtn" class="p-4 bg-blue-600 text-white rounded-lg">Yuborish</button>
+        </form>
     </section>
 
-    <footer class="py-10 text-center text-slate-500 border-t border-slate-800">
-        <p>© 2026 Aloshiy Dev. Все права защищены.</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // DARK MODE
+        document.getElementById('themeToggle').onclick = () => document.documentElement.classList.toggle('dark');
 
+        // GOOGLE APPS SCRIPT INTEGRATSIYASI
         document.getElementById('orderForm').onsubmit = async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerText = "Отправка...";
-            
-            // Здесь добавьте вызов вашего Apps Script
-            alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
-            btn.innerText = "Отправить";
+            btn.disabled = true;
+            btn.innerText = "Yuborilmoqda...";
+
+            const data = {
+                ism: document.getElementById('ism').value,
+                familiya: document.getElementById('familiya').value,
+                raqam: document.getElementById('raqam').value,
+                xizmat: document.getElementById('xizmat').value,
+                izoh: document.getElementById('izoh').value
+            };
+
+            try {
+                await fetch('https://script.google.com/macros/s/AKfycbz8wK8yviqkLKMLyWha9nISwh7389oa4ntHP3Jub6jGPJXskQBg8oBacAMimaNGCCG45g/exec', { // <--- SHU YERGA URLNI QO'YING
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                });
+                alert("Buyurtma qabul qilindi! Tez orada bog'lanamiz.");
+            } catch (err) {
+                alert("Xatolik yuz berdi.");
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Yuborish";
+            }
         };
     </script>
 </body>
