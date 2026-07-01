@@ -1,4 +1,4 @@
-// --- MULTI-LANGUAGE TRANSLATION DICTIONARY (FULLY COMPLETED) ---
+// --- MULTI-LANGUAGE TRANSLATION DICTIONARY ---
 const langData = {
     uz: {
         // Navigation
@@ -71,7 +71,7 @@ const langData = {
         faq_q2: "Instagram avtomatlashtirish nima beradi?",
         faq_a2: "Mijoz Instagram Direct yoki izohlarda ma'lum bir so'zni yozganda (masalan: 'narxi'), biz o'rnatgan API tizimi unga avtomatik ravishda sayt havolasini yoki maxsus taklifni yuboradi va mijozni sadoqatli xaridorga aylantiradi.",
         faq_q3: "Target reklama uchun budjetni kim beradi?",
-        faq_a3: "Bizning xizmat narximiz faqatgina reklamani to'g'ri va professional sozlashni o'z ichiga oladi. Reklamaning kunlik yoki oylik budjeti (Meta kompaniyasiga to'lanadigan pul) mijoz tomonidan alohida taqdim etiladi.",
+        faq_a3: "Bizning xizmat narximiz faqatgina reklamani to'g'ri va professional sozlashni o'z ichiga olagi. Reklamaning kunlik yoki oylik budjeti (Meta kompaniyasiga to'lanadigan pul) mijoz tomonidan alohida taqdim etiladi.",
         
         // Order Form
         form_title: "Keling, loyihangizni boshlaymiz",
@@ -223,7 +223,7 @@ const langData = {
         
         plan_2_subtitle: "Кардар чогултуучу сайт + автоматташтыруу тутумдарын туташтыруу",
         p2_f1: "Премиум UI/UX Landing Page",
-        p2_f2: "Google Sheets (Таблица) интеграциясы",
+        p2_f2: "Google Sheets (Таблица) интеграцияси",
         p2_f3: "Telegram Бот жана группаларга билдирүүлөр",
         p2_f4: "Instagram API автоматташтырууну туташтыруу",
         
@@ -237,7 +237,7 @@ const langData = {
         faq_title: "Көп берилүүчү суроолор",
         faq_desc: "Негизги суроолорго ачык жана так жоопторубуз.",
         faq_q1: "Сайтка түшкөн табыштамаларды кайдан көрөбүз?",
-        faq_a1: "Бардык табыштамалар реалдуу убакыт режиминде сизdin Google Drive эсебиңиздеги Google Sheets файлына түшөт. Ошондой эле, ыңгайлуулук үчүн аларды Telegram группаңызга бот аркылуу жөнөтөбүз.",
+        faq_a1: "Бардык табыштамалар реалдуу убакыт режиминде сизdin Google Drive эсебиңиздеги Google Sheets файлына түшөт. Ошондоо эле, ыңгайлуулук үчүн аларды Telegram группаңызга бот аркылуу жөнөтөбүз.",
         faq_q2: "Instagram автоматташтыруу эмне берет?",
         faq_a2: "Кардар Instagram Direct же комментарийлерде белгилүү бир сөздү жазганда (мисалы: 'баасы'), биз орноткон API тутуму ага автоматтык түрдө сайттын шилтемесин же атайын сунушту жөнөтүп, кардарды сатып алуучуга айлантат.",
         faq_q3: "Таргет жарнамасы үчүн бюджетти ким берет?",
@@ -257,10 +257,11 @@ const langData = {
     }
 };
 
-// LANGUAGE SWITCHER ENGINE
+// --- SMART LANGUAGE SWITCHER ENGINE ---
 document.addEventListener("DOMContentLoaded", () => {
     const langSelect = document.getElementById('langSelect');
     
+    // Matnlarni o'zgartirish funksiyasi
     function changeLanguage(lang) {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
@@ -270,17 +271,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-if (langSelect) {
-    // Agar avval tanlangan til bo'lsa o'shani oladi, bo'lmasa 'ru' ni default qiladi
-    const savedLang = localStorage.getItem('selectedLang') || 'ru';
-    
-    langSelect.value = savedLang;
-    changeLanguage(savedLang);
-    
-    langSelect.addEventListener('change', (e) => {
-        const chosenLang = e.target.value;
-        changeLanguage(chosenLang);
-        localStorage.setItem('selectedLang', chosenLang); // Tilni brauzer xotirasiga saqlash
-    });
-}
+    if (langSelect) {
+        // Brauzer xotirasini tekshiramiz. Agar birinchi marta kirayotgan bo'lsa, 'ru' (rus tili) faollashadi.
+        const defaultLang = localStorage.getItem('selectedLang') || 'ru';
+        
+        // Select elementi va tilni moslaymiz
+        langSelect.value = defaultLang;
+        changeLanguage(defaultLang);
+        
+        // Foydalanuvchi tilni o'zgartirganda ishlaydigan hodisa
+        langSelect.addEventListener('change', (e) => {
+            const chosenLang = e.target.value;
+            changeLanguage(chosenLang);
+            localStorage.setItem('selectedLang', chosenLang); // Tanlovni saqlab qolish
+        });
+    }
 });
