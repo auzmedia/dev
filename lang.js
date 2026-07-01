@@ -271,10 +271,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (langSelect) {
-        // Default tilda ishga tushirish
-        changeLanguage(langSelect.value);
+        // Sayt ochilganda qiymatni rus tiliga majburiy sozlaymiz
+        langSelect.value = 'ru'; 
+        changeLanguage('ru'); // Rus tili lug'atini ishga tushirish
         
-        // Til o'zgarganda yangilash
+        // Til foydalanuvchi tomonidan o'zgartirilganda yangilash
         langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
     }
 });
