@@ -1,91 +1,81 @@
 <!DOCTYPE html>
-<html lang="uz" class="dark scroll-smooth">
+<html lang="uz" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALOSHIY.DEV | Digital Excellence</title>
+    <title>Aloshiy.dev | Premium Digital Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #3b82f6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        :root { --bg: #ffffff; --text: #0f172a; }
+        .dark { --bg: #0f172a; --text: #f8fafc; }
+        body { background: var(--bg); color: var(--text); transition: 0.3s; }
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="bg-slate-950 text-white overflow-x-hidden">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 p-6 glass border-b border-white/10">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-black">ALOSHIY<span class="text-blue-500">.DEV</span></div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="#services" class="hover:text-white transition">Xizmatlar</a>
-                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
-                <a href="#order" class="hover:text-white transition">Buyurtma</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <select id="lang" class="bg-transparent text-xs uppercase"><option>UZ</option><option>RU</option><option>KG</option></select>
-                <button id="themeToggle" class="text-lg">🌓</button>
-            </div>
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center glass">
+        <div class="text-2xl font-black">ALOSHIY<span class="text-blue-500">.DEV</span></div>
+        <div class="hidden md:flex gap-8 font-medium">
+            <a href="#about" class="hover:text-blue-500">Biz haqimizda</a>
+            <a href="#services" class="hover:text-blue-500">Xizmatlar</a>
+            <a href="#portfolio" class="hover:text-blue-500">Portfolio</a>
+        </div>
+        <div class="flex gap-4 items-center">
+            <select class="bg-transparent text-sm font-bold"><option>UZ</option><option>RU</option><option>KG</option></select>
+            <button id="themeToggle" class="text-xl">🌓</button>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="min-h-screen flex items-center justify-center pt-20 px-6 text-center">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight">Biznesingizni <br/><span class="gradient-text">raqamlashtiring</span></h1>
-            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Eng yuqori standartdagi web-dasturlash. Telegram botlar, SaaS tizimlar va premium dizayn.</p>
-            <a href="#order" class="px-10 py-4 bg-blue-600 rounded-2xl font-bold hover:bg-blue-500 transition">Loyihani boshlash</a>
-        </div>
+    <header class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-6xl md:text-8xl font-black mb-6">Biznesingizni <br/><span class="gradient-text">raqamlashtiring</span></h1>
+        <p class="text-xl text-gray-500 max-w-2xl mb-10">Eng yuqori standartdagi web-dasturlash. Telegram botlar, SaaS va premium dizayn.</p>
+        <a href="#order" class="px-10 py-4 bg-blue-600 rounded-2xl font-bold hover:scale-105 transition">Buyurtma berish</a>
     </header>
 
-    <!-- PAKETLAR -->
-    <section id="services" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-16 text-center">Paketlarimiz</h2>
+    <section class="py-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-6xl mx-auto">
+        <div><div class="text-4xl font-black mb-2">100+</div><div class="text-gray-500">Loyihalar</div></div>
+        <div><div class="text-4xl font-black mb-2">50+</div><div class="text-gray-500">Mijozlar</div></div>
+        <div><div class="text-4xl font-black mb-2">5+</div><div class="text-gray-500">Yillik tajriba</div></div>
+        <div><div class="text-4xl font-black mb-2">99%</div><div class="text-gray-500">Qoniqish</div></div>
+    </section>
+
+    <section id="services" class="py-20 max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Tariflarimiz</h2>
         <div class="grid md:grid-cols-4 gap-6">
             <div class="glass p-8 rounded-3xl hover:border-blue-500 transition">
-                <h3 class="font-bold mb-4">Standard</h3>
-                <p class="text-sm text-gray-400">Oddiy Landing Page uchun</p>
+                <h3 class="text-xl font-bold mb-4">Standard</h3>
+                <p class="text-gray-400 mb-6">Oddiy Landing Page</p>
+                <a href="#order" class="block w-full py-3 text-center border rounded-xl">Tanlash</a>
             </div>
-            <div class="glass p-8 rounded-3xl border-blue-500/50">
-                <h3 class="font-bold mb-4">VIP</h3>
-                <p class="text-sm text-gray-400">Landing + Telegram Bot</p>
+            <div class="glass p-8 rounded-3xl border-blue-500">
+                <h3 class="text-xl font-bold mb-4">VIP</h3>
+                <p class="text-gray-400 mb-6">Landing + Bot</p>
+                <a href="#order" class="block w-full py-3 text-center bg-blue-600 rounded-xl">Tanlash</a>
             </div>
-            <div class="glass p-8 rounded-3xl hover:border-blue-500 transition">
-                <h3 class="font-bold mb-4">Premium</h3>
-                <p class="text-sm text-gray-400">Landing + Bot + Instagram</p>
             </div>
-            <div class="glass p-8 rounded-3xl hover:border-blue-500 transition">
-                <h3 class="font-bold mb-4">Gold</h3>
-                <p class="text-sm text-gray-400">Full App + Automation</p>
-            </div>
-        </div>
     </section>
 
-    <!-- FORM -->
-    <section id="order" class="py-24 max-w-xl mx-auto px-6">
-        <div class="glass p-10 rounded-3xl">
-            <h2 class="text-3xl font-bold mb-8">Buyurtma berish</h2>
-            <form id="orderForm" class="space-y-4">
-                <input type="text" id="ism" placeholder="Ismingiz" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-blue-500">
-                <input type="text" id="familiya" placeholder="Familiyangiz" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-blue-500">
-                <input type="tel" id="raqam" placeholder="Telefon raqam" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-blue-500">
-                <select id="xizmat" class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none">
-                    <option>Standard</option><option>VIP</option><option>Premium</option><option>Gold</option>
-                </select>
-                <textarea id="izoh" placeholder="Loyiha haqida..." class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none h-32"></textarea>
-                <button type="submit" id="submitBtn" class="w-full p-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition">Yuborish</button>
-            </form>
-        </div>
+    <section id="order" class="py-20 max-w-xl mx-auto px-6">
+        <form id="orderForm" class="glass p-10 rounded-3xl space-y-4">
+            <h2 class="text-3xl font-bold mb-6">Buyurtma berish</h2>
+            <input type="text" id="ism" placeholder="Ism" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10">
+            <input type="text" id="familiya" placeholder="Familiya" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10">
+            <input type="tel" id="raqam" placeholder="Telefon" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10">
+            <select id="xizmat" class="w-full p-4 rounded-xl bg-white/5 border border-white/10"><option>Standard</option><option>VIP</option></select>
+            <textarea id="izoh" placeholder="Izoh" class="w-full p-4 rounded-xl bg-white/5 border border-white/10 h-32"></textarea>
+            <button type="submit" id="submitBtn" class="w-full p-4 bg-blue-600 rounded-xl font-bold">Yuborish</button>
+        </form>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="py-10 text-center border-t border-white/10 text-gray-500 text-sm">
-        <p>&copy; 2026 Aloshiy.dev. Barcha huquqlar himoyalangan.</p>
-    </footer>
 
     <script>
+        // Dark Mode
+        document.getElementById('themeToggle').onclick = () => document.documentElement.classList.toggle('dark');
+
+        // Form Submit
         document.getElementById('orderForm').onsubmit = async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
@@ -101,8 +91,7 @@
 
             try {
                 await fetch('YOUR_APPS_SCRIPT_URL', {
-                    method: 'POST',
-                    mode: 'no-cors',
+                    method: 'POST', mode: 'no-cors',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
                 });
