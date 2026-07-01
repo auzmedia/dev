@@ -1,73 +1,96 @@
 <!DOCTYPE html>
-<html lang="uz" class="scroll-smooth">
+<html lang="uz" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aloshiy Dev | Premium Web Development</title>
+    <title>ALOSHIY.DEV | Digital Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.js"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .dark { background-color: #0f172a; color: white; }
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-slate-900 transition-all duration-500">
+<body class="bg-slate-950 text-white overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center glass">
-        <div class="text-2xl font-bold">ALOSHIY.DEV</div>
-        <div class="hidden md:flex gap-8 items-center">
-            <a href="#about" class="hover:text-blue-500">Biz haqimizda</a>
-            <a href="#services" class="hover:text-blue-500">Xizmatlar</a>
-            <a href="#portfolio" class="hover:text-blue-500">Portfolio</a>
-            <select id="lang" class="bg-transparent"><option>UZ</option><option>RU</option><option>KG</option></select>
-            <button id="themeToggle" class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full">🌓</button>
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 p-6 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black">ALOSHIY<span class="text-blue-500">.DEV</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#services" class="hover:text-white transition">Xizmatlar</a>
+                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+                <a href="#order" class="hover:text-white transition">Buyurtma</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <select id="lang" class="bg-transparent text-xs uppercase"><option>UZ</option><option>RU</option><option>KG</option></select>
+                <button id="themeToggle" class="text-lg">🌓</button>
+            </div>
         </div>
-        <button id="menuBtn" class="md:hidden">☰</button>
     </nav>
 
-    <section class="h-screen flex items-center justify-center text-center">
-        <div>
-            <h1 class="text-6xl font-bold mb-6">Kelajak Biznesingizni Yarating</h1>
-            <p class="text-xl text-gray-500 mb-10">Premium Web Dasturlash va Avtomatlashtirish</p>
-            <a href="#order" class="px-8 py-4 bg-blue-600 text-white rounded-full">Buyurtma berish</a>
+    <!-- HERO -->
+    <header class="min-h-screen flex items-center justify-center pt-20 px-6 text-center">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight">Biznesingizni <br/><span class="gradient-text">raqamlashtiring</span></h1>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Eng yuqori standartdagi web-dasturlash. Telegram botlar, SaaS tizimlar va premium dizayn.</p>
+            <a href="#order" class="px-10 py-4 bg-blue-600 rounded-2xl font-bold hover:bg-blue-500 transition">Loyihani boshlash</a>
+        </div>
+    </header>
+
+    <!-- PAKETLAR -->
+    <section id="services" class="py-24 max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-16 text-center">Paketlarimiz</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="glass p-8 rounded-3xl hover:border-blue-500 transition">
+                <h3 class="font-bold mb-4">Standard</h3>
+                <p class="text-sm text-gray-400">Oddiy Landing Page uchun</p>
+            </div>
+            <div class="glass p-8 rounded-3xl border-blue-500/50">
+                <h3 class="font-bold mb-4">VIP</h3>
+                <p class="text-sm text-gray-400">Landing + Telegram Bot</p>
+            </div>
+            <div class="glass p-8 rounded-3xl hover:border-blue-500 transition">
+                <h3 class="font-bold mb-4">Premium</h3>
+                <p class="text-sm text-gray-400">Landing + Bot + Instagram</p>
+            </div>
+            <div class="glass p-8 rounded-3xl hover:border-blue-500 transition">
+                <h3 class="font-bold mb-4">Gold</h3>
+                <p class="text-sm text-gray-400">Full App + Automation</p>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 px-6 grid md:grid-cols-4 gap-6">
-        <div class="glass p-8 rounded-2xl">
-            <h3 class="text-2xl font-bold">Standard</h3>
-            <ul class="my-6 space-y-2"><li>Landing Page</li><li>Mobil moslashuv</li></ul>
+    <!-- FORM -->
+    <section id="order" class="py-24 max-w-xl mx-auto px-6">
+        <div class="glass p-10 rounded-3xl">
+            <h2 class="text-3xl font-bold mb-8">Buyurtma berish</h2>
+            <form id="orderForm" class="space-y-4">
+                <input type="text" id="ism" placeholder="Ismingiz" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-blue-500">
+                <input type="text" id="familiya" placeholder="Familiyangiz" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-blue-500">
+                <input type="tel" id="raqam" placeholder="Telefon raqam" required class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-blue-500">
+                <select id="xizmat" class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none">
+                    <option>Standard</option><option>VIP</option><option>Premium</option><option>Gold</option>
+                </select>
+                <textarea id="izoh" placeholder="Loyiha haqida..." class="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none h-32"></textarea>
+                <button type="submit" id="submitBtn" class="w-full p-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition">Yuborish</button>
+            </form>
         </div>
-        <div class="glass p-8 rounded-2xl bg-blue-600/10 border-blue-500">
-            <h3 class="text-2xl font-bold">VIP</h3>
-            <ul class="my-6 space-y-2"><li>Standard +</li><li>Telegram Bot</li></ul>
-        </div>
-        </section>
-
-    <section id="order" class="py-20 max-w-2xl mx-auto px-6">
-        <form id="orderForm" class="grid gap-6">
-            <input type="text" id="ism" placeholder="Ism" required class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
-            <input type="text" id="familiya" placeholder="Familiya" required class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
-            <input type="tel" id="raqam" placeholder="Tel: +998..." required class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
-            <select id="xizmat" class="p-4 rounded-lg bg-white dark:bg-slate-800 border">
-                <option>Standard</option><option>VIP</option><option>Premium</option><option>Gold</option>
-            </select>
-            <textarea id="izoh" placeholder="Izoh" class="p-4 rounded-lg bg-white dark:bg-slate-800 border"></textarea>
-            <button type="submit" id="submitBtn" class="p-4 bg-blue-600 text-white rounded-lg">Yuborish</button>
-        </form>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 text-center border-t border-white/10 text-gray-500 text-sm">
+        <p>&copy; 2026 Aloshiy.dev. Barcha huquqlar himoyalangan.</p>
+    </footer>
 
     <script>
-        // DARK MODE
-        document.getElementById('themeToggle').onclick = () => document.documentElement.classList.toggle('dark');
-
-        // GOOGLE APPS SCRIPT INTEGRATSIYASI
         document.getElementById('orderForm').onsubmit = async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
             btn.innerText = "Yuborilmoqda...";
-
+            
             const data = {
                 ism: document.getElementById('ism').value,
                 familiya: document.getElementById('familiya').value,
@@ -77,19 +100,15 @@
             };
 
             try {
-                await fetch('https://script.google.com/macros/s/AKfycbz8wK8yviqkLKMLyWha9nISwh7389oa4ntHP3Jub6jGPJXskQBg8oBacAMimaNGCCG45g/exec', { // <--- SHU YERGA URLNI QO'YING
+                await fetch('YOUR_APPS_SCRIPT_URL', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
                 });
-                alert("Buyurtma qabul qilindi! Tez orada bog'lanamiz.");
-            } catch (err) {
-                alert("Xatolik yuz berdi.");
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "Yuborish";
-            }
+                alert("Buyurtma qabul qilindi!");
+            } catch(e) { alert("Xatolik!"); }
+            btn.innerText = "Yuborish";
         };
     </script>
 </body>
