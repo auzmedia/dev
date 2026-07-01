@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Web Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.js"></script>
+</head>
+<body class="bg-gray-900 text-white transition-colors duration-300">
+
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg">
+        <div class="text-2xl font-bold">ALOSHIY.DEV</div>
+        <div class="flex gap-4">
+            <select class="bg-gray-700 p-2 rounded">
+                <option>UZ</option><option>RU</option><option>KG</option>
+            </select>
+            <button id="themeToggle" class="bg-yellow-500 px-4 py-2 rounded">Dark/Light</button>
+        </div>
+    </nav>
+
+    <header class="h-[80vh] flex flex-col items-center justify-center text-center p-4">
+        <h1 class="text-6xl font-extrabold mb-4 animate-fade-in">Kelajak Biznesingizni Yarating</h1>
+        <p class="text-xl text-gray-400 mb-8">Premium darajadagi Web va Telegram avtomatlashtirish</p>
+        <button class="bg-blue-600 px-10 py-4 rounded-full text-lg hover:scale-105 transition">Buyurtma berish</button>
+    </header>
+
+    <section id="order" class="p-10 bg-gray-800 rounded-lg max-w-2xl mx-auto">
+        <h2 class="text-3xl mb-6 text-center">Buyurtma Berish</h2>
+        <form id="orderForm" class="grid gap-4">
+            <input type="text" id="ism" placeholder="Ism" class="p-3 bg-gray-700 rounded" required>
+            <input type="text" id="familiya" placeholder="Familiya" class="p-3 bg-gray-700 rounded" required>
+            <input type="text" id="raqam" placeholder="Telefon Raqam" class="p-3 bg-gray-700 rounded" required>
+            <select id="xizmat" class="p-3 bg-gray-700 rounded">
+                <option>Landing Page</option>
+                <option>Landing + Telegram VIP</option>
+                <option>Gold Paket</option>
+            </select>
+            <textarea id="izoh" placeholder="Izoh" class="p-3 bg-gray-700 rounded"></textarea>
+            <button type="submit" class="bg-green-600 p-3 rounded font-bold">Yuborish</button>
+        </form>
+    </section>
+
+    <script>
+        // FORMAGA MA'LUMOT YUBORISH
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                ism: document.getElementById('ism').value,
+                familiya: document.getElementById('familiya').value,
+                raqam: document.getElementById('raqam').value,
+                xizmat: document.getElementById('xizmat').value,
+                izoh: document.getElementById('izoh').value
+            };
+            fetch('SIZNING_APPS_SCRIPT_URLINGIZ', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(() => alert("Buyurtma qabul qilindi!"));
+        });
+    </script>
+</body>
+</html>
