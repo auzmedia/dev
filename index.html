@@ -4,381 +4,444 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & OpenGraph -->
-    <title>ALOSHIY.DEV | Professional Web & Bot Development</title>
-    <meta name="description" content="Zamonaviy web saytlar, Telegram Mini Applar va Python (Django/FastAPI) backend xizmatlari. To'liq biznes avtomatizatsiyasi.">
-    <meta property="og:title" content="ALOSHIY.DEV | Digital Excellence">
-    <meta property="og:description" content="Biznesingizni avtomatlashtiruvchi premium veb-saytlar va Telegram Mini App yechimlari.">
-    <meta property="og:type" content="website">
+    <title>ALOSHIY.DEV | Professional Landing Pages & Automation</title>
+    <meta name="description" content="Yuqori konversiyali Landing Pagelar, Instagram va Telegram avtomatizatsiyasi, Google Sheets integratsiyasi va Target xizmatlari.">
 
-    <!-- Tailwind & FontAwesome CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: #0f172a; 
-            color: #f8fafc; 
-        }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .glass-card { background: #1e293b; border: 1px solid #334155; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s; }
-        .glass-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
-        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Inter', sans-serif; }
+        .glass { backdrop-filter: blur(12px); }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 px-6 py-4 glass border-b border-white/5">
+    <nav class="fixed w-full z-50 px-6 py-4 glass bg-white/80 dark:bg-slate-900/70 border-b border-slate-200 dark:border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-2xl font-black tracking-tight">ALOSHIY<span class="text-blue-500">.DEV</span></div>
-            <!-- Menu Links -->
-            <div class="hidden md:flex gap-8 font-medium text-sm text-gray-300">
-                <a href="#services" class="hover:text-white transition">Xizmatlar</a>
-                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
-                <a href="#pricing" class="hover:text-white transition">Narxlar</a>
-                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            
+            <div class="hidden md:flex gap-8 font-medium text-sm">
+                <a href="#services" data-i18n="nav_services" class="hover:text-blue-500 dark:hover:text-white transition">Xizmatlar</a>
+                <a href="#portfolio" data-i18n="nav_portfolio" class="hover:text-blue-500 dark:hover:text-white transition">Portfolio</a>
+                <a href="#pricing" data-i18n="nav_pricing" class="hover:text-blue-500 dark:hover:text-white transition">Narxlar</a>
+                <a href="#faq" data-i18n="nav_faq" class="hover:text-blue-500 dark:hover:text-white transition">FAQ</a>
             </div>
+            
             <div class="flex items-center gap-4">
-                <select class="bg-transparent text-sm font-bold outline-none cursor-pointer border border-white/10 px-2 py-1 rounded">
-                    <option class="bg-slate-900 text-white">UZ</option>
-                    <option class="bg-slate-900 text-white">RU</option>
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-blue-500 transition">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+
+                <select id="langSelect" class="bg-transparent text-sm font-bold outline-none cursor-pointer border border-slate-300 dark:border-white/10 px-2 py-1 rounded dark:text-white bg-white dark:bg-slate-900">
+                    <option value="uz">UZ</option>
+                    <option value="ru">RU</option>
+                    <option value="kg">KG</option>
                 </select>
-                <a href="#order" class="hidden md:block px-5 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-500 transition shadow-md shadow-blue-500/10">Buyurtma berish</a>
+                
+                <a href="#order" data-i18n="nav_order_btn" class="hidden md:block px-5 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-500 transition shadow-md shadow-blue-500/10">Buyurtma berish</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header class="pt-40 pb-24 px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
-        <span class="px-4 py-1 rounded-full border border-blue-500/30 text-blue-400 text-xs font-semibold uppercase tracking-widest bg-blue-500/10 mb-6">Web & Telegram Development</span>
-        <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight tracking-tight">Biznesingiz uchun <br><span class="gradient-text">zamonaviy IT yechimlar</span></h1>
-        <p class="text-lg md:text-xl text-gray-400 max-w-3xl mb-10 font-light">Biz shunchaki chiroyli kod yozmaymiz. Biz savdolaringizni oshiruvchi Landing Pagelar, Telegram Mini Applar (Web Apps) va Python bazasidagi kuchli ekotizimlarni arxitektura qilamiz.</p>
+        <span data-i18n="hero_badge" class="px-4 py-1 rounded-full border border-blue-500/30 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-widest bg-blue-500/10 mb-6">Landing Pages & Business Automation</span>
+        <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight tracking-tight dark:text-white">
+            <span data-i18n="hero_title_1">Biznesingiz uchun</span> <br>
+            <span class="gradient-text" data-i18n="hero_title_2">raqamli sotuv tizimlari</span>
+        </h1>
+        <p data-i18n="hero_desc" class="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-3xl mb-10 font-light">Biz mijoz jalb qiluvchi tezyurar Landing Pagelar yaratamiz, Instagram API va Telegram botlar orqali arizalarni avtomatlashtirib Google Jadvallarga ulaymiz va professional Target reklamalarini yoqib beramiz.</p>
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a href="#order" class="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-500/20 text-center">Loyihani boshlash</a>
-            <a href="#portfolio" class="px-8 py-4 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-700 transition text-center">Bajarilgan ishlar</a>
+            <a href="#order" data-i18n="hero_btn_start" class="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-500/20 text-center">Loyihani boshlash</a>
+            <a href="#portfolio" data-i18n="hero_btn_portfolio" class="px-8 py-4 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white rounded-xl font-bold hover:bg-slate-300 dark:hover:bg-slate-700 transition text-center">Bajarilgan ishlar</a>
         </div>
     </header>
 
-    <!-- TECH STACK LOGOS -->
-    <section class="py-12 border-y border-white/5 bg-slate-900/50">
+    <section class="py-12 border-y border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-8">Biz ishlatadigan professional texnologiyalar</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-gray-400 text-lg md:text-xl font-bold">
-                <div class="flex items-center gap-2 hover:text-blue-400 transition cursor-default"><i class="fa-brands fa-html5 text-xl"></i> HTML / Landing Page</div>
-                <div class="flex items-center gap-2 hover:text-green-400 transition cursor-default"><i class="fa-brands fa-instagram text-lg"></i> Instagram API</div>
-                <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default"><i class="fa-brands fa-telegram text-xl"></i> Telegram Bot / Web Apps</div>
-                <div class="flex items-center gap-2 hover:text-indigo-400 transition cursor-default"><i class="fa-solid fa-globe text-lg"></i> Domains </div>
+            <p data-i18n="stack_title" class="text-xs font-bold text-slate-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-8">Biz ishlatadigan professional asboblar</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-slate-600 dark:text-gray-400 text-lg md:text-xl font-bold">
+                <div class="flex items-center gap-2 hover:text-orange-500 transition cursor-default"><i class="fa-brands fa-html5 text-xl"></i> HTML5 / CSS3</div>
+                <div class="flex items-center gap-2 hover:text-yellow-500 transition cursor-default"><i class="fa-brands fa-js text-xl"></i> JavaScript</div>
                 <div class="flex items-center gap-2 hover:text-sky-400 transition cursor-default"><i class="fa-brands fa-css3-alt text-xl"></i> Tailwind CSS</div>
+                <div class="flex items-center gap-2 hover:text-fuchsia-500 transition cursor-default"><i class="fa-brands fa-instagram text-xl"></i> Instagram API</div>
+                <div class="flex items-center gap-2 hover:text-cyan-400 transition cursor-default"><i class="fa-brands fa-telegram text-xl"></i> Telegram Bot</div>
+                <div class="flex items-center gap-2 hover:text-green-500 transition cursor-default"><i class="fa-solid fa-table text-lg"></i> Google Sheets</div>
             </div>
         </div>
     </section>
 
-    <!-- STATISTICS -->
-    <section class="py-16 bg-slate-800/20">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><div class="text-4xl md:text-5xl font-black text-blue-400 mb-2">50+</div><div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Bajarilgan loyihalar</div></div>
-            <div><div class="text-4xl md:text-5xl font-black text-blue-400 mb-2">100%</div><div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Moslashuvchan (Responsive)</div></div>
-            <div><div class="text-4xl md:text-5xl font-black text-blue-400 mb-2">&lt;1.2s</div><div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Sayt yuklanish tezligi</div></div>
-            <div><div class="text-4xl md:text-5xl font-black text-blue-400 mb-2">24/7</div><div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-wider">Kafolatlangan qo'llab-quvvatlash</div></div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
     <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Sizga qanday yechimlar kerak?</h2>
-            <p class="text-gray-400 max-w-xl mx-auto font-light">Biznesingizni yangi bosqichga olib chiquvchi yo'nalishlarimiz.</p>
+            <h2 data-i18n="services_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Sizga qanday yechimlar kerak?</h2>
+            <p data-i18n="services_desc" class="text-slate-600 dark:text-gray-400 max-w-xl mx-auto font-light">Biznesingizni yangi bosqichga olib chiquvchi yo'nalishlarimiz.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl">
-                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6"><i class="fa-solid fa-laptop-code text-2xl text-blue-400"></i></div>
-                <h3 class="text-xl font-bold mb-3">Premium Landing Pages</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Mijozlarni birinchi soniyadanoq jalb qiluvchi, UX/UI qonuniyatlariga mos, yuqori konversiyali bir sahifali veb-saytlar.</p>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm transition hover:-translate-y-2 duration-300">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6"><i class="fa-solid fa-laptop-code text-2xl text-blue-500"></i></div>
+                <h3 data-i18n="service_1_title" class="text-xl font-bold mb-3 dark:text-white">Premium Landing Pages</h3>
+                <p data-i18n="service_1_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Mijozlarni birinchi soniyadanoq jalb qiluvchi, ultra tez yuklanadigan, zamonaviy va mukammal bir sahifali veb-saytlar.</p>
             </div>
-            <div class="glass-card p-8 rounded-2xl">
-                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6"><i class="fa-brands fa-telegram text-2xl text-purple-400"></i></div>
-                <h3 class="text-xl font-bold mb-3">Telegram Mini Apps & Botlar</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Telegram ichida xuddi alohida mobil ilovadek ishlaydigan do'konlar, yetkazib berish tizimlari va avtomatlashtirilgan aqlli botlar.</p>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm transition hover:-translate-y-2 duration-300">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6"><i class="fa-solid fa-robot text-2xl text-purple-500"></i></div>
+                <h3 data-i18n="service_2_title" class="text-xl font-bold mb-3 dark:text-white">Xabarlar va Bot Avtomatizatsiyasi</h3>
+                <p data-i18n="service_2_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Instagram API orqali avtomat javoblar yuborish, saytni Telegram botga ulash, arizalarni real vaqtda Google Jadvallar va guruhlarga yuborish.</p>
             </div>
-            <div class="glass-card p-8 rounded-2xl">
-                <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6"><i class="fa-solid fa-server text-2xl text-emerald-400"></i></div>
-                <h3 class="text-xl font-bold mb-3">Backend & Murakkab Tizimlar</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Django va FastAPI negizida qurilgan, ma'lumotlar xavfsizligi ta'minlangan, mukammal boshqaruv paneli (Admin Panel) mavjud CRM yoki SaaS tizimlari.</p>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm transition hover:-translate-y-2 duration-300">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6"><i class="fa-solid fa-bullseye text-2xl text-emerald-500"></i></div>
+                <h3 data-i18n="service_3_title" class="text-xl font-bold mb-3 dark:text-white">Target Reklama (Meta Ads)</h3>
+                <p data-i18n="service_3_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Yaratilgan saytingizga tayyor mijozlar oqimini olib kelish uchun Facebook va Instagram ijtimoiy tarmoqlarida professional target yoqib berish.</p>
             </div>
         </div>
     </section>
 
-    <!-- PORTFOLIO WITH REAL MOCKUP DESCRIPTIONS -->
-    <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto bg-slate-900/60 rounded-[2.5rem] border border-white/5">
+    <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto bg-slate-100/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-slate-200 dark:border-white/5">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Real Loyihalarimiz</h2>
-            <p class="text-gray-400 max-w-xl mx-auto font-light">Bizning mahoratimizni isbotlovchi amaldagi real keyslar.</p>
+            <h2 data-i18n="portfolio_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Real Loyihalarimiz</h2>
+            <p data-i18n="portfolio_desc" class="text-slate-600 dark:text-gray-400 max-w-xl mx-auto font-light">Bizning mahoratimizni isbotlovchi amaldagi real keyslar.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
             
-            <!-- Project 1 -->
-            <div class="glass-card p-5 rounded-2xl">
-                <div class="h-56 bg-gradient-to-br from-emerald-500/20 to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-white/5">
-                    <i class="fa-solid fa-burger text-6xl text-emerald-400/40"></i>
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <div class="h-56 bg-gradient-to-br from-emerald-500/10 to-slate-200 dark:to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-slate-200 dark:border-white/5">
+                    <i class="fa-solid fa-burger text-6xl text-emerald-500/40"></i>
                 </div>
                 <div class="px-2">
-                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Mini App / FastAPI</span><span class="text-xs text-gray-500">Bajarilgan: 2026</span></div>
-                    <h3 class="text-2xl font-bold mb-3">Tijoriy Fast-Food Buyurtma Tizimi</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Mijozlar Telegramdan chiqmasdan savatga taom qo'shishi, to'lov qilishi va yetkazib berish manzilini yuborishi mumkin bo'lgan interaktiv Web App.</p>
+                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Landing + Telegram Bot</span><span class="text-xs text-slate-400">2026</span></div>
+                    <h3 data-i18n="p1_title" class="text-2xl font-bold mb-3 dark:text-white">Fast-Food Buyurtma Sahifasi</h3>
+                    <p data-i18n="p1_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Mijozlar taomlarni tanlab, buyurtma tugmasini bosganda, barcha ma'lumotlar avtomat ravishda kafe xodimlari Telegram guruhiga va Google Jadvallarga yetib boradigan tizim.</p>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="glass-card p-5 rounded-2xl">
-                <div class="h-56 bg-gradient-to-br from-blue-500/20 to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-white/5">
-                    <i class="fa-solid fa-briefcase-medical text-6xl text-blue-400/40"></i>
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <div class="h-56 bg-gradient-to-br from-blue-500/10 to-slate-200 dark:to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-slate-200 dark:border-white/5">
+                    <i class="fa-solid fa-briefcase-medical text-6xl text-blue-500/40"></i>
                 </div>
                 <div class="px-2">
-                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Premium Landing / Sheet API</span><span class="text-xs text-gray-500">Bajarilgan: 2026</span></div>
-                    <h3 class="text-2xl font-bold mb-3">Klinika uchun Landing va Integratsiya</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Tibbiyot markazi uchun yaratilgan yuqori darajadagi landing page. Arizalar real vaqt rejimida Google Sheets hamda xodimlar guruhiga (Telegram) boradi.</p>
+                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Landing + Target + Sheet</span><span class="text-xs text-slate-400">2026</span></div>
+                    <h3 data-i18n="p2_title" class="text-2xl font-bold mb-3 dark:text-white">Klinika uchun Premium Landing</h3>
+                    <p data-i18n="p2_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Tibbiyot markazi uchun yaratilgan konversiyasi yuqori veb-sahifa. Unga professional target reklamasi sozlab berilgan, arizalar to'g'ridan-to'g'ri Google Sheet jadvallarida jamlanadi.</p>
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="glass-card p-5 rounded-2xl">
-                <div class="h-56 bg-gradient-to-br from-purple-500/20 to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-white/5">
-                    <i class="fa-solid fa-book text-6xl text-purple-400/40"></i>
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <div class="h-56 bg-gradient-to-br from-purple-500/10 to-slate-200 dark:to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-slate-200 dark:border-white/5">
+                    <i class="fa-solid fa-book text-6xl text-purple-500/40"></i>
                 </div>
                 <div class="px-2">
-                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Django / DB Architecture</span><span class="text-xs text-gray-500">Bajarilgan: 2026</span></div>
-                    <h3 class="text-2xl font-bold mb-3">Kutubxona Tizimi va Mukammal Baza</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Kitoblar va mualliflarni kategoriyalarga ajratuvchi, adminlar uchun barcha ma'lumotlarni filtrlash va boshqarish imkonini beruvchi mukammal Django loyihasi.</p>
+                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">HTML5 / JS / Sheets</span><span class="text-xs text-slate-400">2026</span></div>
+                    <h3 data-i18n="p3_title" class="text-2xl font-bold mb-3 dark:text-white">Onlayn Kitob Do'koni Vitrinasi</h3>
+                    <p data-i18n="p3_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Kitob mahsulotlarini chiroyli va qulay filtrlash imkoniyatiga ega katalog sayt. Har bir xarid arizasi Google Jadvallar bazasiga integratsiya qilingan.</p>
                 </div>
             </div>
 
-            <!-- Project 4 -->
-            <div class="glass-card p-5 rounded-2xl">
-                <div class="h-56 bg-gradient-to-br from-amber-500/20 to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-white/5">
-                    <i class="fa-solid fa-couch text-6xl text-amber-400/40"></i>
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <div class="h-56 bg-gradient-to-br from-amber-500/10 to-slate-200 dark:to-slate-900 rounded-xl mb-6 flex items-center justify-center border border-slate-200 dark:border-white/5">
+                    <i class="fa-solid fa-couch text-6xl text-amber-500/40"></i>
                 </div>
                 <div class="px-2">
-                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-amber-400 uppercase tracking-wider">UI Architecture / Showcase</span><span class="text-xs text-gray-500">Bajarilgan: 2026</span></div>
-                    <h3 class="text-2xl font-bold mb-3">An'anaviy Tapchan 3D Galereya</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Milliy va an'anaviy arxitektura namunalarining professional texnik chizmalari va rendering uslubidagi ishlarini taqdim etuvchi yuqori darajali portfolio platformasi.</p>
+                    <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">UI / Creative Showcase</span><span class="text-xs text-slate-400">2026</span></div>
+                    <h3 data-i18n="p4_title" class="text-2xl font-bold mb-3 dark:text-white">An'anaviy Tapchan Galereya Sayti</h3>
+                    <p data-i18n="p4_desc" class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed mb-6">Milliy va zamonaviy tapchan dizaynlarining professional chizmalari hamda rasmlarini taqdim etuvchi, tez ishlaydigan interaktiv vitrina-sahifa.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- PRICING TABLES -->
     <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Shaffof Tariflar va Paketlar</h2>
-            <p class="text-gray-400 max-w-xl mx-auto font-light">Loyihangiz miqyosiga mos keladigan narxlarni tanlang.</p>
+            <h2 data-i18n="pricing_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Shaffof Tariflar va Paketlar</h2>
+            <p data-i18n="pricing_desc" class="text-slate-600 dark:text-gray-400 max-w-xl mx-auto font-light">Sizga kerakli xizmatlar ko'lamini tanlang.</p>
         </div>
-        <div class="grid md:grid-cols-4 gap-6">
+        <div class="grid md:grid-cols-3 gap-8">
             
-            <!-- Standard Plan -->
-            <div class="glass-card p-8 rounded-2xl flex flex-col">
-                <h3 class="text-xl font-bold mb-2">Standard</h3>
-                <p class="text-xs text-gray-400 mb-6">Kichik biznes yoki shaxsiy brend uchun vizitka sayt</p>
-                <div class="text-4xl font-black mb-6 border-b border-white/10 pb-6">$150<span class="text-sm font-normal text-gray-500">/dan</span></div>
-                <ul class="text-sm text-gray-300 space-y-4 mb-8 flex-1">
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 1-3 sahifali Landing Page</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> To'liq mobil moslashuvchanlik</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Bepul Domen & Xosting (1 yil)</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Google va SEO optimizatsiya</li>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col">
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Standard</h3>
+                <p data-i18n="plan_1_subtitle" class="text-xs text-slate-500 dark:text-gray-400 mb-6">Kichik biznes yoki shaxsiy brend uchun vizitka sayt</p>
+                <div class="text-4xl font-black mb-6 border-b border-slate-200 dark:border-white/10 pb-6 dark:text-white">$150<span class="text-sm font-normal text-gray-500">/dan</span></div>
+                <ul class="text-sm text-slate-700 dark:text-gray-300 space-y-4 mb-8 flex-1">
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p1_f1">1-3 sahifali Landing Page (HTML/CSS)</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p1_f2">To'liq mobil moslashuvchanlik</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p1_f3">Bepul Domen ulab berish</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p1_f4">Tezkor yuklanish optimizatsiyasi</span></li>
                 </ul>
-                <a href="#order" class="text-center w-full py-3 border border-slate-700 rounded-xl hover:bg-white/5 font-bold transition">Tanlash</a>
+                <a href="#order" data-i18n="select_plan" class="text-center w-full py-3 border border-slate-300 dark:border-slate-700 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 font-bold transition dark:text-white">Tanlash</a>
             </div>
 
-            <!-- VIP Plan -->
-            <div class="glass-card p-8 rounded-2xl flex flex-col border-blue-500 relative transform md:-translate-y-4 shadow-2xl shadow-blue-900/30">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Mashhur</div>
-                <h3 class="text-xl font-bold mb-2">VIP Sotuv</h3>
-                <p class="text-xs text-gray-400 mb-6">Mijoz yig'uvchi va integratsiyalashgan avtomatizatsiya</p>
-                <div class="text-4xl font-black text-blue-400 mb-6 border-b border-white/10 pb-6">$300<span class="text-sm font-normal text-gray-500">/dan</span></div>
-                <ul class="text-sm text-gray-300 space-y-4 mb-8 flex-1">
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Premium UI/UX Landing Page</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Google Sheets / Excel ulanishi</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Telegram Notification bot integratsiyasi</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Animatsiyalar va Premium effektlar</li>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border-2 border-blue-500 relative transform md:-translate-y-4 shadow-xl flex flex-col">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider" data-i18n="popular">Mashhur</div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">VIP Avtomatizatsiya</h3>
+                <p data-i18n="plan_2_subtitle" class="text-xs text-slate-500 dark:text-gray-400 mb-6">Mijoz yig'uvchi sayt + mukammal tizimlar ulanishi</p>
+                <div class="text-4xl font-black text-blue-600 dark:text-blue-400 mb-6 border-b border-slate-200 dark:border-white/10 pb-6">$300<span class="text-sm font-normal text-gray-500">/dan</span></div>
+                <ul class="text-sm text-slate-700 dark:text-gray-300 space-y-4 mb-8 flex-1">
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p2_f1">Premium UI/UX Landing Page</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p2_f2">Google Sheets (Jadval) integratsiyasi</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p2_f3">Telegram Bot & Guruhga bildirishnomalar</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p2_f4">Instagram API avtomatlashtirish ulanishi</span></li>
                 </ul>
-                <a href="#order" class="text-center w-full py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition">Tanlash</a>
+                <a href="#order" data-i18n="select_plan" class="text-center w-full py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition">Tanlash</a>
             </div>
 
-            <!-- Premium Plan -->
-            <div class="glass-card p-8 rounded-2xl flex flex-col">
-                <h3 class="text-xl font-bold mb-2">Premium Bot</h3>
-                <p class="text-xs text-gray-400 mb-6">Telegram ichidagi onlayn ekotizimlar</p>
-                <div class="text-4xl font-black mb-6 border-b border-white/10 pb-6">$500<span class="text-sm font-normal text-gray-500">/dan</span></div>
-                <ul class="text-sm text-gray-300 space-y-4 mb-8 flex-1">
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Telegram Mini App / Web App</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Python / FastAPI / Django Backend</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Savat, Buyurtma va Geolokatsiya tizimi</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> To'liq mukammal Admin Panel</li>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col">
+                <h3 class="text-xl font-bold mb-2 dark:text-white">VIP + Target Ads</h3>
+                <p data-i18n="plan_3_subtitle" class="text-xs text-slate-500 dark:text-gray-400 mb-6">Tayyor veb-sayt tizimi va mijozlar oqimi birga</p>
+                <div class="text-4xl font-black mb-6 border-b border-slate-200 dark:border-white/10 pb-6 dark:text-white">$500<span class="text-sm font-normal text-gray-500">/dan</span></div>
+                <ul class="text-sm text-slate-700 dark:text-gray-300 space-y-4 mb-8 flex-1">
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p3_f1">To'liq VIP Avtomatizatsiya paketi</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p3_f2">Facebook & Instagram Target sozlash</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p3_f3">Kreativ reklama matnlari va takliflar</span></li>
+                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <span data-i18n="p3_f4">7 kunlik reklama monitoringi</span></li>
                 </ul>
-                <a href="#order" class="text-center w-full py-3 border border-slate-700 rounded-xl hover:bg-white/5 font-bold transition">Tanlash</a>
-            </div>
-
-            <!-- Gold Plan -->
-            <div class="glass-card p-8 rounded-2xl flex flex-col">
-                <h3 class="text-xl font-bold mb-2">Gold Enterprise</h3>
-                <p class="text-xs text-gray-400 mb-6">Yirik loyihalar, CRM va korporativ platformalar</p>
-                <div class="text-4xl font-black mb-6 border-b border-white/10 pb-6">Kelishilgan</div>
-                <ul class="text-sm text-gray-300 space-y-4 mb-8 flex-1">
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Murakkab CRM yoki SaaS tizimlari</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Katta hajmdagi relyatsion MB (PostgreSQL)</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Tashqi API integratsiyalari (SMS, To'lov)</li>
-                    <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 1 oylik to'liq texnik nazorat (Kafolat)</li>
-                </ul>
-                <a href="#order" class="text-center w-full py-3 border border-slate-700 rounded-xl hover:bg-white/5 font-bold transition">Bog'lanish</a>
+                <a href="#order" data-i18n="select_plan" class="text-center w-full py-3 border border-slate-300 dark:border-slate-700 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 font-bold transition dark:text-white">Tanlash</a>
             </div>
 
         </div>
     </section>
 
-    <!-- FAQ SECTION (ACCORDION) -->
     <section id="faq" class="py-24 px-6 max-w-4xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Ko'p beriladigan savollar</h2>
-            <p class="text-gray-400 font-light">Hamkorlikdan oldin paydo bo'ladigan asosiy savollarga ochiq javoblarimiz.</p>
+            <h2 data-i18n="faq_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Ko'p beriladigan savollar</h2>
+            <p data-i18n="faq_desc" class="text-slate-600 dark:text-gray-400 font-light">Asosiy savollarga ochiq va aniq javoblarimiz.</p>
         </div>
         <div class="space-y-4">
             
-            <details class="glass-card p-6 rounded-2xl group cursor-pointer" open>
-                <summary class="font-bold text-lg outline-none flex justify-between items-center select-none">
-                    Loyiha qancha muddatda tayyor bo'ladi?
+            <details class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 group cursor-pointer" open>
+                <summary class="font-bold text-lg outline-none flex justify-between items-center select-none dark:text-white">
+                    <span data-i18n="faq_q1">Saytga kelgan arizalarni qayerda ko'ramiz?</span>
                     <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-blue-500"></i>
                 </summary>
-                <p class="mt-4 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
-                    Loyihaning murakkabligiga qarab 3 kundan 14 kungacha vaqt ketadi. Masalan, VIP Landing Page 3-5 kunda topshirilsa, mukammal boshqaruv paneli va backend tizimiga ega Telegram Mini Applar o'rtacha 7-14 kun muddatda to'liq tayyor bo'ladi.
+                <p data-i18n="faq_a1" class="mt-4 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                    Barcha arizalar real vaqt rejimida sizning Google Drive hisobingizdagi Google Sheets (Jadval) fayliga tushadi. Shuningdek, qulaylik uchun ularni Telegram guruhingizga bot orqali bir soniyada yo'naltirib beramiz.
                 </p>
             </details>
 
-            <details class="glass-card p-6 rounded-2xl group cursor-pointer">
-                <summary class="font-bold text-lg outline-none flex justify-between items-center select-none">
-                    Domen va Xosting narxi tarif ichiga kiradimi?
+            <details class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 group cursor-pointer">
+                <summary class="font-bold text-lg outline-none flex justify-between items-center select-none dark:text-white">
+                    <span data-i18n="faq_q2">Instagram avtomatlashtirish nima beradi?</span>
                     <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-blue-500"></i>
                 </summary>
-                <p class="mt-4 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
-                    Ha, biz barcha tariflarimizda mijozlarimizga birinchi yil uchun .UZ yoki .COM domenini hamda xavfsiz, tezkor VPS xosting (server) xizmatini mutlaqo bepul sovg'a qilamiz. Keyingi yillardan boshlab faqatgina server provayderining o'ziga standart minimal to'lov to'lanadi.
+                <p data-i18n="faq_a2" class="mt-4 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                    Mijoz Instagram Direct yoki izohlarda ma'lum bir so'zni yozganda (masalan: "narxi"), biz o'rnatgan API tizimi unga avtomatik ravishda sayt havolasini yoki maxsus taklifni yuboradi va mijozni sadoqatli xaridorga aylantiradi.
                 </p>
             </details>
 
-            <details class="glass-card p-6 rounded-2xl group cursor-pointer">
-                <summary class="font-bold text-lg outline-none flex justify-between items-center select-none">
-                    Sayt yoki bot tayyor bo'lgach, ma'lumotlarni o'zim o'zgartira olamanmi?
+            <details class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 group cursor-pointer">
+                <summary class="font-bold text-lg outline-none flex justify-between items-center select-none dark:text-white">
+                    <span data-i18n="faq_q3">Target reklama uchun budjetni kim beradi?</span>
                     <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-blue-500"></i>
                 </summary>
-                <p class="mt-4 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
-                    Albatta. Premium va Gold tariflarimizda biz loyihaga maxsus boshqaruv paneli (Admin panel) ulab beramiz. U yerda siz texnik bilimlarsiz ham yangi mahsulot qo'shish, narxlarni o'zgartirish, arizalarni ko'rish va statistikani kuzatish imkoniyatiga ega bo'lasiz.
+                <p data-i18n="faq_a3" class="mt-4 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                    Bizning xizmat narximiz faqatgina reklamani to'g'ri va professional sozlashni o'z ichiga oladi. Reklamaning kunlik yoki oylik budjeti (Meta kompaniyasiga to'lanadigan pul) mijoz tomonidan alohida taqdim etiladi.
                 </p>
             </details>
 
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-24 px-6 max-w-7xl mx-auto bg-slate-800/20 rounded-[2.5rem] border border-white/5">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black mb-4 tracking-tight">Mijozlarimiz e'tirofi</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card p-8 rounded-2xl">
-                <div class="flex text-yellow-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="text-gray-300 italic mb-6">"Klinikamiz uchun Landing page va Telegram bot integratsiyasini buyurtma bergandik. Arizalar sekundiga yo'qolmay guruhga kelyapti. Biznesda shaffoflik oshdi. Ishga gap yo'q!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold text-sm">M</div>
-                    <div><h4 class="font-bold text-sm">Malika xonim</h4><span class="text-xs text-gray-400">Tibbiyot markazi rahbari</span></div>
-                </div>
-            </div>
-            <div class="glass-card p-8 rounded-2xl">
-                <div class="flex text-yellow-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="text-gray-300 italic mb-6">"Fast-food tarmog'imiz uchun qurilgan Telegram Web App tizimi ajoyib ishlayapti. Savat tizimi, dizayni juda qulay bo'lgani uchun buyurtmalar soni sezilarli darajada ko'paydi."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold text-sm">A</div>
-                    <div><h4 class="font-bold text-sm">Azizbek master</h4><span class="text-xs text-gray-400">Fast-Food brend asoschisi</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONVERSION ORDER FORM -->
     <section id="order" class="py-24 px-6">
-        <div class="max-w-3xl mx-auto glass-card p-8 md:p-14 rounded-[2.5rem]">
-            <h2 class="text-3xl md:text-5xl font-black mb-4 text-center tracking-tight">Keling, loyihangizni boshlaymiz</h2>
-            <p class="text-gray-400 text-center mb-10 font-light">Formani to'ldiring. Biz biznesingiz uchun eng mukammal raqamli yechimni taklif qilamiz.</p>
+        <div class="max-w-3xl mx-auto bg-white dark:bg-slate-800 p-8 md:p-14 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 data-i18n="form_title" class="text-3xl md:text-5xl font-black mb-4 text-center tracking-tight dark:text-white">Keling, loyihangizni boshlaymiz</h2>
+            <p data-i18n="form_desc" class="text-slate-600 dark:text-gray-400 text-center mb-10 font-light">Formani to'ldiring. Biz biznesingiz uchun eng mukammal raqamli yechimni taklif qilamiz.</p>
             
             <form id="orderForm" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Ismingiz</label>
-                        <input type="text" id="ism" placeholder="Masalan: Alisher" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm">
+                        <label data-i18n="form_label_name" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Ismingiz</label>
+                        <input type="text" id="ism" placeholder="Alisher" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Telefon raqamingiz</label>
-                        <input type="tel" id="raqam" placeholder="+998" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm">
+                        <label data-i18n="form_label_phone" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Telefon raqamingiz</label>
+                        <input type="tel" id="raqam" placeholder="+998" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Sizga qaysi paket mos keladi?</label>
-                    <select id="xizmat" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm cursor-pointer">
-                        <option value="Landing Page (Standard)">Landing Page (Standard) — $150</option>
-                        <option value="VIP Sotuv">VIP Sotuv (Landing + Bot) — $300</option>
-                        <option value="Telegram Web App">Telegram Web App (Premium) — $500</option>
-                        <option value="Enterprise Gold">Enterprise Gold (CRM/SaaS) — Kelishilgan</option>
+                    <label data-i18n="form_label_package" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Sizga qaysi paket mos keladi?</label>
+                    <select id="xizmat" class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm cursor-pointer dark:text-white bg-white">
+                        <option value="Landing Page (Standard)">Standard Landing Page — $150</option>
+                        <option value="VIP Avtomatizatsiya">VIP Avtomatizatsiya (Bot + Sheets) — $300</option>
+                        <option value="VIP + Target Ads">VIP Tizim + Target Ads — $500</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Loyiha haqida qisqacha tavsif (Ixtiyoriy)</label>
-                    <textarea id="izoh" rows="4" placeholder="Loyihangiz maqsadi yoki funksiyalari haqida yozishingiz mumkin..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm resize-none"></textarea>
+                    <label data-i18n="form_label_desc" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Loyiha haqida qisqacha tavsif (Ixtiyoriy)</label>
+                    <textarea id="izoh" rows="4" class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm resize-none dark:text-white"></textarea>
                 </div>
-                <button type="submit" id="submitBtn" class="w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-xl hover:bg-blue-500 transition shadow-lg shadow-blue-500/20 tracking-wider">Arizani yuborish</button>
+                <button type="submit" id="submitBtn" data-i18n="form_submit" class="w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-xl hover:bg-blue-500 transition shadow-lg shadow-blue-500/20 tracking-wider">Arizani yuborish</button>
             </form>
         </div>
     </section>
 
-    <!-- FLOATING TELEGRAM BUTTON -->
-    <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" aria-label="Telegram orqali bog'lanish" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:scale-110 hover:bg-blue-400 transition-all z-50 animate-bounce">
+    <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" aria-label="Telegram" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl shadow-lg hover:scale-110 hover:bg-blue-400 transition-all z-50 animate-bounce">
         <i class="fa-brands fa-telegram"></i>
     </a>
 
-    <!-- FOOTER -->
-    <footer class="py-12 border-t border-white/5 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+    <footer class="py-12 border-t border-slate-200 dark:border-white/5 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div>
-                <div class="text-2xl font-black tracking-tight mb-4">ALOSHIY<span class="text-blue-500">.DEV</span></div>
-                <p class="text-gray-400 text-sm font-light">Biznes va savdolarni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz.</p>
+                <div class="text-2xl font-black tracking-tight mb-2 dark:text-white">ALOSHIY<span class="text-blue-500">.DEV</span></div>
+                <p data-i18n="footer_text" class="text-slate-500 dark:text-gray-400 text-sm font-light">Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz.</p>
             </div>
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-wider mb-4">Bog'lanish</h4>
-                <ul class="text-gray-400 text-sm space-y-2 font-light">
-                    <li><i class="fa-solid fa-envelope mr-2 text-blue-500"></i> info@aloshiy.dev</li>
-                    <li><i class="fa-solid fa-location-dot mr-2 text-blue-500"></i> O'zbekiston</li>
-                </ul>
+            <div class="text-center text-slate-400 text-xs">
+                <p>&copy; 2026 ALOSHIY.DEV — Barcha huquqlar himoyalangan.</p>
             </div>
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-wider mb-4">Ijtimoiy tarmoqlar</h4>
-                <div class="flex gap-4 justify-center md:justify-start">
-                    <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition"><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-gray-600 text-xs border-t border-white/5 pt-8">
-            <p>&copy; 2026 ALOSHIY.DEV — Barcha huquqlar himoyalangan.</p>
         </div>
     </footer>
 
-    <!-- INTERACTION SCRIPT -->
     <script>
+        // --- DATA DICTIONARY FOR LANGUAGES ---
+        const langData = {
+            uz: {
+                nav_services: "Xizmatlar", nav_portfolio: "Portfolio", nav_pricing: "Narxlar", nav_faq: "FAQ", nav_order_btn: "Buyurtma berish",
+                hero_badge: "Landing Pages & Business Automation", hero_title_1: "Biznesingiz uchun", hero_title_2: "raqamli sotuv tizimlari",
+                hero_desc: "Biz mijoz jalb qiluvchi tezyurar Landing Pagelar yaratamiz, Instagram API va Telegram botlar orqali arizalarni avtomatlashtirib Google Jadvallarga ulaymiz va professional Target reklamalarini yoqib beramiz.",
+                hero_btn_start: "Loyihani boshlash", hero_btn_portfolio: "Bajarilgan ishlar", stack_title: "Biz ishlatadigan professional asboblar",
+                services_title: "Sizga qanday yechimlar kerak?", services_desc: "Biznesingizni yangi bosqichga olib chiquvchi yo'nalishlarimiz.",
+                service_1_title: "Premium Landing Pages", service_1_desc: "Mijozlarni birinchi soniyadanoq jalb qiluvchi, ultra tez yuklanadigan, zamonaviy va mukammal bir sahifali veb-saytlar.",
+                service_2_title: "Xabarlar va Bot Avtomatizatsiyasi", service_2_desc: "Instagram API orqali avtomat javoblar yuborish, saytni Telegram botga ulash, arizalarni real vaqtda Google Jadvallar va guruhlarga yuborish.",
+                service_3_title: "Target Reklama (Meta Ads)", service_3_desc: "Yaratilgan saytingizga tayyor mijozlar oqimini olib kelish uchun Facebook va Instagram ijtimoiy tarmoqlarida professional target yoqib berish.",
+                portfolio_title: "Real Loyihalarimiz", portfolio_desc: "Bizning mahoratimizni isbotlovchi amaldagi real keyslar.",
+                p1_title: "Fast-Food Buyurtma Sahifasi", p1_desc: "Mijozlar taomlarni tanlab, buyurtma tugmasini bosganda, barcha ma'lumotlar avtomat ravishda kafe xodimlari Telegram guruhiga va Google Jadvallarga yetib boradigan tizim.",
+                p2_title: "Klinika uchun Premium Landing", p2_desc: "Tibbiyot markazi uchun yaratilgan konversiyasi yuqori veb-sahifa. Unga professional target reklamasi sozlab berilgan, arizalar to'g'ridan-to'g'ri Google Sheet jadvallarida jamlanadi.",
+                p3_title: "Onlayn Kitob Do'koni Vitrinasi", p3_desc: "Kitob mahsulotlarini chiroyli va qulay filtrlash imkoniyatiga ega katalog sayt. Har bir xarid arizasi Google Jadvallar bazasiga integratsiya qilingan.",
+                p4_title: "An'anaviy Tapchan Galereya Sayti", p4_desc: "Milliy va zamonaviy tapchan dizaynlarining professional chizmalari hamda rasmlarini taqdim etuvchi, tez ishlaydigan interaktiv vitrina-sahifa.",
+                pricing_title: "Shaffof Tariflar va Paketlar", pricing_desc: "Sizga kerakli xizmatlar ko'lamini tanlang.",
+                plan_1_subtitle: "Kichik biznes yoki shaxsiy brend uchun vizitka sayt", plan_2_subtitle: "Mijoz yig'uvchi sayt + mukammal tizimlar ulanishi", plan_3_subtitle: "Tayyor veb-sayt tizimi va mijozlar oqimi birga",
+                p1_f1: "1-3 sahifali Landing Page (HTML/CSS)", p1_f2: "To'liq mobil moslashuvchanlik", p1_f3: "Bepul Domen ulab berish", p1_f4: "Tezkor yuklanish optimizatsiyasi",
+                p2_f1: "Premium UI/UX Landing Page", p2_f2: "Google Sheets (Jadval) integratsiyasi", p2_f3: "Telegram Bot & Guruhga bildirishnomalar", p2_f4: "Instagram API avtomatlashtirish ulanishi",
+                p3_f1: "To'liq VIP Avtomatizatsiya paketi", p3_f2: "Facebook & Instagram Target sozlash", p3_f3: "Kreativ reklama matnlari va takliflar", p3_f4: "7 kunlik reklama monitoringi",
+                popular: "Mashhur", select_plan: "Tanlash", faq_title: "Ko'p beriladigan savollar", faq_desc: "Asosiy savollarga ochiq va aniq javoblarimiz.",
+                faq_q1: "Saytga kelgan arizalarni qayerda ko'ramiz?", faq_a1: "Barcha arizalar real vaqt rejimida sizning Google Drive hisobingizdagi Google Sheets (Jadval) fayliga tushadi. Shuningdek, qulaylik uchun ularni Telegram guruhingizga bot orqali bir soniyada yo'naltirib beramiz.",
+                faq_q2: "Instagram avtomatlashtirish nima beradi?", faq_a2: "Mijoz Instagram Direct yoki izohlarda ma'lum bir so'zni yozganda (masalan: 'narxi'), biz o'rnatgan API tizimi unga avtomatik ravishda sayt havolasini yoki maxsus taklifni yuboradi va mijozni sadoqatli xaridorga aylantiradi.",
+                faq_q3: "Target reklama uchun budjetni kim beradi?", faq_a3: "Bizning xizmat narximiz faqatgina reklamani to'g'ri va professional sozlashni o'z ichiga oladi. Reklamaning kunlik yoki oylik budjeti (Meta kompaniyasiga to'lanadigan pul) mijoz tomonidan alohida taqdim etiladi.",
+                form_title: "Keling, loyihangizni boshlaymiz", form_desc: "Formani to'ldiring. Biz biznesingiz uchun eng mukammal raqamli yechimni taklif qilamiz.",
+                form_label_name: "Ismingiz", form_label_phone: "Telefon raqamingiz", form_label_package: "Sizga qaysi paket mos keladi?", form_label_desc: "Loyiha haqida qisqacha tavsif (Ixtiyoriy)", form_submit: "Arizani yuborish",
+                footer_text: "Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz."
+            },
+            ru: {
+                nav_services: "Услуги", nav_portfolio: "Портфолио", nav_pricing: "Цены", nav_faq: "FAQ", nav_order_btn: "Заказать",
+                hero_badge: "Landing Pages & Business Automation", hero_title_1: "Цифровые системы продаж", hero_title_2: "для вашего бизнеса",
+                hero_desc: "Мы создаем высокоскоростные целевые страницы (Landing Pages), автоматизируем заявки через Instagram API и Telegram-ботов с подключением к Google Таблицам, а также настраиваем эффективный таргет.",
+                hero_btn_start: "Начать проект", hero_btn_portfolio: "Наши работы", stack_title: "Профессиональный стек инструментов",
+                services_title: "Какие решения вам необходимы?", services_desc: "Наши направления, которые выведут ваш бизнес на новый уровень.",
+                service_1_title: "Премиум Landing Pages", service_1_desc: "Современные одностраничные сайты, привлекающие клиентов с первых секунд и обладающие ультрабыстрой скоростью загрузки.",
+                service_2_title: "Автоматизация сообщений и ботов", service_2_desc: "Автоответы через Instagram API, интеграция сайта с Telegram-ботом, мгновенная передача заявок в Google Таблицы и рабочие группы.",
+                service_3_title: "Таргетированная реклама (Meta)", service_3_desc: "Профессиональная настройка таргета в Facebook и Instagram для привлечения готового потока клиентов на ваш новый сайт.",
+                portfolio_title: "Реальные Проекты", portfolio_desc: "Примеры наших работ, доказывающие профессиональный подход.",
+                p1_title: "Страница заказа для Фаст-Фуда", p1_desc: "Интерактивная система, где при выборе блюд и оформлении заказа вся информация мгновенно уходит в Telegram-группу сотрудников и Google Таблицу.",
+                p2_title: "Премиум Лендинг для Клиники", p2_desc: "Высококонверсионный сайт для медицинского центра со встроенной таргетированной рекламой. Заявки бережно собираются в таблицах Google Drive.",
+                p3_title: "Витрина Онлайн Магазина Книг", p3_desc: "Сайт-каталог с удобной фильтрацией книжной продукции. Каждая форма заказа полностью интегрирована с базой данных на основе Google Таблиц.",
+                p4_title: "Сайт-Галерея Традиционных Топчанов", p4_desc: "Быстрая интерактивная платформа для демонстрации профессиональных чертежей и визуализаций национальных элементов интерьера.",
+                pricing_title: "Прозрачные Тарифы и Пакеты", pricing_desc: "Выберите объем услуг, соответствующий масштабу вашего бизнеса.",
+                plan_1_subtitle: "Сайт-визитка для малого бизнеса или личного бренда", plan_2_subtitle: "Сайт для сбора лидов + полная автоматизация систем", plan_3_subtitle: "Готовая экосистема продаж вместе с потоком клиентов",
+                p1_f1: "Landing Page на 1-3 экрана (HTML/CSS)", p1_f2: "Полная мобильная адаптивность", p1_f3: "Бесплатное подключение домена", p1_f4: "Оптимизация скорости загрузки",
+                p2_f1: "Премиум UI/UX дизайн лендинга", p2_f2: "Интеграция с Google Sheets (Таблицы)", p2_f3: "Уведомления в Telegram-Бот и группы", p2_f4: "Связка с автоматизацией Instagram API",
+                p3_f1: "Полный пакет автоматизации VIP", p3_f2: "Настройка таргета в Facebook & Instagram", p3_f3: "Креативные рекламные тексты и офферы", p3_f4: "7 дней мониторинга рекламной кампании",
+                popular: "Популярно", select_plan: "Выбрать", faq_title: "Часто задаваемые вопросы", faq_desc: "Открытые и четкие ответы на ключевые вопросы перед стартом.",
+                faq_q1: "Где мы сможем видеть поступающие заявки?", faq_a1: "Все лиды в реальном времени заносятся в Google Sheets на вашем Google Диске. Также, для максимального удобства, наш бот дублирует их в вашу рабочую Telegram-группу за одну секунду.",
+                faq_q2: "Что дает автоматизация через Instagram?", faq_a2: "Когда клиент пишет кодовое слово (например: 'цена') в Директ или комментариях, система мгновенно отправляет ему ссылку на сайт или уникальное предложение, закрывая сделку на автомате.",
+                faq_q3: "Кто предоставляет бюджет для таргета?", faq_a3: "В стоимость нашей услуги входит исключительно профессиональная аналитика и настройка рекламы. Рекламный бюджет (деньги, списываемые Meta) оплачивается клиентом отдельно.",
+                form_title: "Давайте начнем ваш проект", form_desc: "Заполните форму, и мы предложим идеальное цифровое решение для автоматизации ваших продаж.",
+                form_label_name: "Ваше имя", form_label_phone: "Номер телефона", form_label_package: "Какой пакет вам подходит?", form_label_desc: "Краткое описание проекта (Необязательно)", form_submit: "Отправить заявку",
+                footer_text: "Ваш надежный партнер в сфере автоматизации и масштабирования бизнеса."
+            },
+            kg: {
+                nav_services: "Кызматтар", nav_portfolio: "Портфолио", nav_pricing: "Баалар", nav_faq: "FAQ", nav_order_btn: "Заказ берүү",
+                hero_badge: "Landing Pages & Business Automation", hero_title_1: "Бизнесиңиз үчүн", hero_title_2: "сатуунун санарип тутумдары",
+                hero_desc: "Биз кардарларды тартуучу тез иштеген Landing Page сайттарын түзөбүз, Instagram API жана Telegram боттор аркылуу билдирүүлөрдү автоматташтырып, Google Таблицага туташтырабыз жана профессионалдуу Таргет жарнамаларын күйгүзүп беребиз.",
+                hero_btn_start: "Долбоорду баштоо", hero_btn_portfolio: "Аткарылган иштер", stack_title: "Биз колдонгон профессионалдык куралдар",
+                services_title: "Сизге кандай чечимдер керек?", services_desc: "Бизнесиңизди жаңы деңгээлге көтөрө турган багыттарыбыз.",
+                service_1_title: "Премиум Landing Pages", service_1_desc: "Кардарды алгачкы секунддан тартып кызыктырган, өтө тез жүктөлүүчү, заманбап бир барактуу веб-сайттар.",
+                service_2_title: "Билдирүүлөр жана Бот Автоматташтыруу", service_2_desc: "Instagram API аркылуу авто-жоопторду жөнөтүү, сайтты Telegram ботко туташтыруу, табыштамаларды ирээти менен Google Таблицага жана тайпаларга жөнөтүү.",
+                service_3_title: "Таргет Жарнама (Meta Ads)", service_3_desc: "Жаңы сайтыңызга даяр кардарлардын агымын алып келүү үчүн Facebook жана Instagram социалдык тармактарында профессионалдуу таргетти жөндөө.",
+                portfolio_title: "Реалдуу Долбоорлорубуз", portfolio_desc: "Биздин чеберчилигибизди далилдеген иш жүзүндөгү реалдуу кейстер.",
+                p1_title: "Фаст-Фуд Заказ Берүү Баракчасы", p1_desc: "Кардарлар тамактарды тандап, заказ берүү баскычын басканда, бардык маалыматтар автоматтык түрдө кафе кызматкерлеринин Telegram тайпасына жана Google Таблицага түшүүчү тутум.",
+                p2_title: "Клиника үчүн Премиум Лендинг", p2_desc: "Медициналык борбор үчүн түзүлгөн жогорку конверсиялуу веб-баракча. Профессионалдуу таргет жарнамасы жөнгө салынган, табыштамалар Google Sheet таблицасында чогулат.",
+                p3_title: "Онлайн Китеп Дүкөнүнүн Витринасы", p3_desc: "Китеп продукцияларын кооз жана ыңгайлуу чыпкалоо мүмкүнчүлүгүнө ээ каталог сайты. Ар бир заказ Google Таблицалар базасы менен интеграцияланган.",
+                p4_title: "Салттуу Тапчан Галерея Сайты", p4_desc: "Улуттук жана заманбап тапчан үлгүлөрүнүн профессионалдык чиймелерин жана сүрөттөрүн көрсөткөн, тез иштеген интерактивдүү витрина-баракча.",
+                pricing_title: "Ачык-Айкын Баалар жана Пакеттер", pricing_desc: "Бизнесиңиздин масштабына ылайыктуу кызматтардын көлөмүн тандаңыз.",
+                plan_1_subtitle: "Чакан бизнес же жеке бренд үчүн визитка сайты", plan_2_subtitle: "Кардарларды чогултуучу сайт + тутумдарды толук автоматташтыруу", plan_3_subtitle: "Даяр веб-сайт тутуму жана кардарлардын агымы бирге",
+                p1_f1: "1-3 барактан турган Landing Page (HTML/CSS)", p1_f2: "Уюлдук телефондорго толук ылайыкташуу", p1_f3: "Доменди акысыз туташтырып берүү", p1_f4: "Тез жүктөө оптималдаштыруусу",
+                p2_f1: "Премиум UI/UX Landing Page дизайны", p2_f2: "Google Sheets (Таблица) интеграциясы", p2_f3: "Telegram Бот жана тайпаларга билдирүүлөр", p2_f4: "Instagram API автоматташтыруу туташуусу",
+                p3_f1: "Толук VIP Автоматташтыруу пакети", p3_f2: "Facebook & Instagram Таргетти жөндөө", p3_f3: "Креативдүү жарнамалык тексттер жана сунуштар", p3_f4: "7 күндүк жарнамалык мониторинг",
+                popular: "Популярдуу", select_plan: "Тандоо", faq_title: "Көп берилүүчү суроолор", faq_desc: "Кызматташуунун алдында пайда болуучу негизги суроолорго ачык жооптор.",
+                faq_q1: "Сайтка келген табыштамаларды кайдан көрөбүз?", faq_a1: "Бардык табыштамалар реалдуу убакыт режиминде сиздин Google Drive эсебиңиздеги Google Sheets (Таблица) файлына түшөт. Ошондой эле, ыңгайлуулук үчүн аларды Telegram тайпаңызга бот аркылуу бир секундда жөнөтүп турабыз.",
+                faq_q2: "Instagram автоматташтыруу эмне берет?", faq_a2: "Кардар Instagram Direct же комментарийлерге белгилүү бир сөздү жазганда (мисалы: 'баасы'), биз орноткон API тутуму ага автоматтык түрдө сайттын шилтемесин же атайын сунушту жөнөтүп, кардарды сатып алуучуга айландырат.",
+                faq_q3: "Таргет жарнама үчүн бюджетти ким берет?", faq_a3: "Биздин кызматтын баасына жарнаманы туура жана профессионалдуу жөндөө гана кирет. Жарнаманын күнүмдүк же айлык бюджети (Meta компаниясына төлөнүүчү каражат) кардар тарабынан өзүнчө берилет.",
+                form_title: "Келиңиз, долбооруңузду баштайлы", form_desc: "Форманы толтуруңуз. Биз бизнесиңиз үчүн эң мыкты санариптик чечимди сунуштайбыз.",
+                form_label_name: "Атыңыз", form_label_phone: "Телефон номериңиз", form_label_package: "Сизге кайсы пакет ылайыктуу?", form_label_desc: "Долбоор жөнүндө кыскача маалымат (Милдеттүү эмес)", form_submit: "Табыштаманы жөнөтүү",
+                footer_text: "Бизнесиңизди автоматташтыруу боюнча сиздин профессионалдуу санариптик өнөктөшүңүз."
+            }
+        };
+
+        const langSelect = document.getElementById('langSelect');
+        function updateLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (langData[lang] && langData[lang][key]) {
+                    el.innerText = langData[lang][key];
+                }
+            });
+            // Update placeholders if any form elements were dynamically needed
+            document.getElementById('ism').placeholder = lang === 'uz' ? 'Alisher' : lang === 'ru' ? 'Алишер' : 'Алишер';
+        }
+
+        langSelect.addEventListener('change', (e) => {
+            updateLanguage(e.target.value);
+            localStorage.setItem('selectedLang', e.target.value);
+        });
+
+        // Load Saved Language
+        const savedLang = localStorage.getItem('selectedLang') || 'uz';
+        langSelect.value = savedLang;
+        updateLanguage(savedLang);
+
+
+        // --- LOGIC FOR LIGHT / DARK THEME ---
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlTag = document.documentElement;
+
+        function toggleTheme() {
+            if (htmlTag.classList.contains('dark')) {
+                htmlTag.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlTag.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Load Saved Theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            htmlTag.classList.remove('dark');
+            themeIcon.className = 'fa-solid fa-sun';
+        } else {
+            htmlTag.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-moon';
+        }
+
+
+        // --- FORM SUBMIT LOGIC ---
         document.getElementById('orderForm').onsubmit = async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             const originalText = btn.innerText;
-            btn.innerText = "Yuborilmoqda...";
+            btn.innerText = langSelect.value === 'uz' ? "Yuborilmoqda..." : langSelect.value === 'ru' ? "Отправка..." : "Жөнөтүлүүдө...";
             btn.disabled = true;
             
             const data = {
@@ -390,17 +453,19 @@
             };
 
             try {
-                // Google Apps Script Deploy URL manzilini shu yerga yozasiz
+                // Google Apps Script Web App URL manzilini shu yerga yozasiz
                 await fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', {
                     method: 'POST', 
                     mode: 'no-cors',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
                 });
-                alert("Arizangiz muvaffaqiyatli qabul qilindi! Tez orada aloqaga chiqamiz.");
+                
+                const successMsg = langSelect.value === 'uz' ? "Arizangiz qabul qilindi! Tez orada bog'lanamiz." : langSelect.value === 'ru' ? "Заявка принята! Скоро свяжемся." : "Табыштама кабыл алынды! Жакында байланышабыз.";
+                alert(successMsg);
                 e.target.reset();
             } catch(error) { 
-                alert("Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.");
+                alert("Error / Xatolik");
             } finally {
                 btn.innerText = originalText;
                 btn.disabled = false;
