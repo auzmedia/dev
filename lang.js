@@ -265,12 +265,27 @@ const langData = {
 // Функция перевода текстов на странице
 function applyLanguage(lang) {
     if (!lang) return;
-    lang = lang.toLowerCase().trim(); // Очистка от пробелов и регистра
+    lang = lang.toLowerCase().trim(); 
     
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
+        
         if (langData[lang] && langData[lang][key]) {
-            el.innerText = langData[lang][key];
+            const translation = langData[lang][key];
+
+            // Agar element INPUT yoki TEXTAREA bo'lsa
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                // Tugma bo'lsa (masalan: <input type="submit">)
+                if (el.type === 'submit' || el.type === 'button') {
+                    el.value = translation;
+                } else {
+                    // Oddiy yozuv maydoni bo'lsa placeholder'ni o'zgartiramiz
+                    el.placeholder = translation;
+                }
+            } else {
+                // Oddiy matnlar (label, p, h1, span) uchun
+                el.innerText = translation;
+            }
         }
     });
 }
