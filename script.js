@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSelect = document.getElementById('langSelect');
     
     // Saqlangan tilni olish
-    const currentLang = localStorage.getItem('lang') || 'uz';
+    const currentLang = localStorage.getItem('lang') || 'ru';
     langSelect.value = currentLang;
 
     function applyTranslation(lang) {
