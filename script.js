@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
         orderForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-          /*  // CLOUDFLARE TURNSTILE CAPTCHA VALIDATION
+           // CLOUDFLARE TURNSTILE CAPTCHA VALIDATION
             const turnstileElement = document.querySelector('[name="cf-turnstile-response"]');
             if (!turnstileElement || !turnstileElement.value) {
                 alert("Iltimos, robot emasligingizni tasdiqlang (Captcha)!");
                 return;
-            } */
+            }
 
             const submitBtn = document.getElementById('submitBtn');
             const originalBtnText = submitBtn.innerText;
