@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submitBtn');
 
     // O'ZINGIZNING GOOGLE APPS SCRIPT WEB APP LINKINGIZNI SHU YERGA QO'YING:
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzGYxKWAzh0b_siqyFegJyLf_HKVATneLRwxmzRijR6mBXVU6DmkrBnQmiH_etbqkQ78A/exec"; 
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz-HbOufFcIHb8oVJJ20qkF-l9k4ezI0eoggke-uznM7YKAQSU0iusge3cWga3gWr9zvQ/exec"; 
 
     orderForm.addEventListener('submit', async (e) => {
         e.preventDefault();
