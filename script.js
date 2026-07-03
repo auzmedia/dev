@@ -1,89 +1,118 @@
-// --- CONFIGURATION ---
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgsNwA0f-88MKAIYIBbPRDslU5CUuP4BOU3uBURRCcfLkRxjIYqi3dRh2XRh9RUOvsyw/exec"; 
-
-document.addEventListener("DOMContentLoaded", () => {
-    // DARK / LIGHT THEME TOGGLE
-    const themeToggle = document.getElementById('themeToggle');
+document.addEventListener('DOMContentLoaded', () => {
+    // --- TEMA (DARK/LIGHT MODE) ---
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            if (document.documentElement.classList.contains('dark')) {
-                themeIcon.className = 'fa-solid fa-sun';
-            } else {
-                themeIcon.className = 'fa-solid fa-moon';
+    // Default holatni tekshirish (oldingi tashrifdan saqlangan bo'lsa)
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+        htmlEl.classList.remove('dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        if (htmlEl.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+    });
+
+    // --- TIL (I18N) ALMASHTIRISH ---
+    const langSelect = document.getElementById('langSelect');
+    
+    // Saqlangan tilni olish
+    const currentLang = localStorage.getItem('lang') || 'uz';
+    langSelect.value = currentLang;
+
+    function applyTranslation(lang) {
+        if (!translations[lang]) return;
+        const elements = document.querySelectorAll('[data-i18n]');
+        
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[lang][key];
+                } else {
+                    el.innerHTML = translations[lang][key];
+                }
             }
         });
     }
+    
+    applyTranslation(currentLang);
 
-    // FORM SUBMISSION EVENT
+    langSelect.addEventListener('change', (e) => {
+        const selectedLang = e.target.value;
+        localStorage.setItem('lang', selectedLang);
+        applyTranslation(selectedLang);
+    });
+
+    // --- FORM YUBORISH (GOOGLE APPS SCRIPT + TURNSTILE) ---
     const orderForm = document.getElementById('orderForm');
-    if (orderForm) {
-        orderForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    const submitBtn = document.getElementById('submitBtn');
 
-           // CLOUDFLARE TURNSTILE CAPTCHA VALIDATION
-            const turnstileElement = document.querySelector('[name="cf-turnstile-response"]');
-            if (!turnstileElement || !turnstileElement.value) {
-                alert("Iltimos, robot emasligingizni tasdiqlang (Captcha)!");
-                return;
-            }
+    // O'ZINGIZNING GOOGLE APPS SCRIPT WEB APP LINKINGIZNI SHU YERGA QO'YING:
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzGYxKWAzh0b_siqyFegJyLf_HKVATneLRwxmzRijR6mBXVU6DmkrBnQmiH_etbqkQ78A/exec"; 
 
-            const submitBtn = document.getElementById('submitBtn');
-            const originalBtnText = submitBtn.innerText;
-            
-            // Tugmani "Yuborilmoqda..." holatiga o'tkazish
-            submitBtn.innerText = "Yuborilmoqda...";
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+    orderForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-            // Ma'lumotlarni yig'ish
-            const currentFormData = {
-                ism: document.getElementById('ism').value,
-                familiya: document.getElementById('familiya').value,
-                raqam: document.getElementById('raqam').value,
-                xizmat: document.getElementById('xizmat').value,
-                izoh: document.getElementById('izoh').value,
-                xolat: "Yangi"
-            };
+        // Turnstile Captcha tekshiruvi (agar html da qo'shilgan bo'lsa)
+        const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
+        if (turnstileResponse && !turnstileResponse.value) {
+            alert("Iltimos, siz bot emassligingizni tasdiqlang!");
+            return;
+        }
 
-            // GOOGLE SHEETS GA YUBORISH
-            fetch(GOOGLE_SCRIPT_URL, {
+        // Ma'lumotlarni yig'ish
+        const formData = {
+            ism: document.getElementById('ism').value,
+            familiya: document.getElementById('familiya').value,
+            raqam: document.getElementById('raqam').value,
+            xizmat: document.getElementById('xizmat').value,
+            izoh: document.getElementById('izoh').value || '-',
+            // turnstile_token: turnstileResponse ? turnstileResponse.value : '' // Captcha tekshirish backendda qilinishi mumkin
+        };
+
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Yuborilmoqda...';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+        try {
+            const response = await fetch(WEB_APP_URL, {
                 method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(currentFormData)
-            })
-            .then(() => {
-                // Muvaffaqiyatli yuborilganda tugmani yashil rangga o'tkazish
-                submitBtn.innerText = "✓ Arizangiz qabul qilindi!";
-                submitBtn.classList.replace('bg-blue-600', 'bg-green-600');
-                submitBtn.classList.replace('hover:bg-blue-500', 'hover:bg-green-500');
-                submitBtn.classList.replace('shadow-blue-500/20', 'shadow-green-500/20');
-                
-                // 3 soniyadan so'ng formani va tugmani asli holiga qaytarish
-                setTimeout(() => {
-                    orderForm.reset();
-                    if (typeof turnstile !== "undefined") turnstile.reset();
-                    
-                    submitBtn.innerText = originalBtnText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-                    submitBtn.classList.replace('bg-green-600', 'bg-blue-600');
-                    submitBtn.classList.replace('hover:bg-green-500', 'hover:bg-blue-500');
-                    submitBtn.classList.replace('shadow-green-500/20', 'shadow-blue-500/20');
-                }, 3000);
-            })
-            .catch(error => {
-                console.error("Xatolik:", error);
-                alert("Tizimda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.");
-                
-                // Xatolik bo'lsa tugmani o'z holiga qaytarish
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8", 
+                },
+                body: JSON.stringify(formData),
             });
-        });
-    }
+
+            const result = await response.json();
+
+            if (result.status === "success") {
+                alert("Arizangiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.");
+                orderForm.reset();
+                // Turnstile-ni qayta yuklash (kerak bo'lsa)
+                if (typeof turnstile !== 'undefined') {
+                    turnstile.reset();
+                }
+            } else {
+                alert("Xatolik yuz berdi: " + result.message);
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Tarmoqda xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.");
+        } finally {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+        }
+    });
 });
