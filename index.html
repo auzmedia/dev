@@ -9,7 +9,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Cloudflare Turnstile Captcha Script -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     
     <script>
@@ -27,7 +26,6 @@
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-    <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 px-6 py-4 glass bg-white/80 dark:bg-slate-900/70 border-b border-slate-200 dark:border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-2xl font-black tracking-tight">ALOSHIY<span class="text-blue-500">.DEV</span></div>
@@ -55,7 +53,6 @@
         </div>
     </nav>
 
-    <!-- HERO HEADER -->
     <header class="pt-40 pb-24 px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
         <span data-i18n="hero_badge" class="px-4 py-1 rounded-full border border-blue-500/30 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-widest bg-blue-500/10 mb-6">Landing Pages & Business Automation</span>
         <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight tracking-tight dark:text-white">
@@ -69,7 +66,6 @@
         </div>
     </header>
 
-    <!-- TECH STACK -->
     <section class="py-12 border-y border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p data-i18n="stack_title" class="text-xs font-bold text-slate-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-8">Biz ishlatadigan professional asboblar</p>
@@ -84,7 +80,6 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 data-i18n="services_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Sizga qanday yechimlar kerak?</h2>
@@ -109,7 +104,6 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
     <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto bg-slate-100/60 dark:bg-slate-900/60 rounded-[2.5rem] border border-slate-200 dark:border-white/5">
         <div class="text-center mb-16">
             <h2 data-i18n="portfolio_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Real Loyihalarimiz</h2>
@@ -162,7 +156,6 @@
         </div>
     </section>
 
-    <!-- PRICING -->
     <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 data-i18n="pricing_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Shaffof Tariflar va Paketlar</h2>
@@ -211,7 +204,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="py-24 px-6 max-w-4xl mx-auto">
         <div class="text-center mb-16">
             <h2 data-i18n="faq_title" class="text-3xl md:text-5xl font-black mb-4 tracking-tight dark:text-white">Ko'p beriladigan savollar</h2>
@@ -250,8 +242,7 @@
         </div>
     </section>
 
-   <!-- ORDER FORM SECTION -->
-    <section id="order" class="py-24 px-6">
+   <section id="order" class="py-24 px-6">
         <div class="max-w-3xl mx-auto bg-white dark:bg-slate-800 p-8 md:p-14 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-lg">
             <h2 data-i18n="form_title" class="text-3xl md:text-5xl font-black mb-4 text-center tracking-tight dark:text-white">Keling, loyihangizni boshlaymiz</h2>
             <p data-i18n="form_desc" class="text-slate-600 dark:text-gray-400 text-center mb-10 font-light">Formani to'ldiring. Biz biznesingiz uchun eng mukammal raqamli yechimni taklif qilamiz.</p>
@@ -264,7 +255,7 @@
                     </div>
                     <div>
                         <label data-i18n="form_label_surname" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Familiyangiz</label>
-                        <input type="text" id="familiya" data-i18n="form_placeholder_surname" placeholder="Asimov" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
+                        <input type="text" id="familiya" data-i18n="form_placeholder_surname" placeholder="Alimov" required class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm dark:text-white">
                     </div>
                     <div class="md:col-span-2">
                         <label data-i18n="form_label_phone" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Telefon raqamingiz</label>
@@ -284,7 +275,6 @@
                     <textarea id="izoh" rows="4" class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-4 outline-none focus:border-blue-500 transition text-sm resize-none dark:text-white"></textarea>
                 </div>
 
-                <!-- CLOUDFLARE TURNSTILE CAPTCHA WIDGET -->
                 <div class="flex justify-center py-2">
                     <div class="cf-turnstile" data-sitekey="0x4AAAAAADu2DG53NfIDLCEZ" data-theme="dark"></div>
                 </div>
@@ -293,12 +283,11 @@
             </form>
         </div>
     </section>
-    <!-- FLOATING TELEGRAM BUTTON -->
+
     <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" aria-label="Telegram" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl shadow-lg hover:scale-110 hover:bg-blue-400 transition-all z-50 animate-bounce">
         <i class="fa-brands fa-telegram"></i>
     </a>
 
-    <!-- FOOTER -->
     <footer class="py-12 border-t border-slate-200 dark:border-white/5 bg-white dark:bg-slate-950">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div>
@@ -311,7 +300,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTION LOGIC & TRANSLATION ENGINE -->
     <script src="lang.js"></script>
     <script src="script.js"></script>
 </body>
