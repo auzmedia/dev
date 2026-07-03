@@ -1,14 +1,10 @@
-// --- MULTI-LANGUAGE TRANSLATION DICTIONARY ---
-const langData = {
+const translations = {
     uz: {
-        // Navigation
         nav_services: "Xizmatlar",
         nav_portfolio: "Portfolio",
         nav_pricing: "Narxlar",
         nav_faq: "FAQ",
         nav_order_btn: "Buyurtma berish",
-        
-        // Hero Section
         hero_badge: "Landing Pages & Business Automation",
         hero_title_1: "Biznesingiz uchun",
         hero_title_2: "raqamli sotuv tizimlari",
@@ -16,8 +12,6 @@ const langData = {
         hero_btn_start: "Loyihani boshlash",
         hero_btn_portfolio: "Bajarilgan ishlar",
         stack_title: "Biz ishlatadigan professional asboblar",
-        
-        // Services
         services_title: "Sizga qanday yechimlar kerak?",
         services_desc: "Biznesingizni yangi bosqichga olib chiquvchi yo'nalishlarimiz.",
         service_1_title: "Premium Landing Pages",
@@ -26,8 +20,6 @@ const langData = {
         service_2_desc: "Instagram API orqali avtomat javoblar yuborish, saytni Telegram botga ulash, arizalarni real vaqtda Google Jadvallar va guruhlarga yuborish.",
         service_3_title: "Target Reklama (Meta Ads)",
         service_3_desc: "Yaratilgan saytingizga tayyor mijozlar oqimini olib kelish uchun Facebook va Instagram ijtimoiy tarmoqlarida professional target yoqib berish.",
-        
-        // Portfolio
         portfolio_title: "Real Loyihalarimiz",
         portfolio_desc: "Bizning mahoratimizni isbotlovchi amaldagi real keyslar.",
         p1_title: "Fast-Food Buyurtma Sahifasi",
@@ -38,32 +30,25 @@ const langData = {
         p3_desc: "Kitob mahsulotlarini chiroyli va qulay filtrlash imkoniyatiga ega katalog sayt. Har bir xarid arizasi Google Jadvallar bazasiga integratsiya qilingan.",
         p4_title: "An'anaviy Tapchan Galereya Sayti",
         p4_desc: "Milliy va zamonaviy tapchan dizaynlarining professional chizmalari hamda rasmlarini taqdim etuvchi, tez ishlaydigan interaktiv vitrina-sahifa.",
-        
-        // Pricing Table
         pricing_title: "Shaffof Tariflar va Paketlar",
         pricing_desc: "Sizga kerakli xizmatlar ko'lamini tanlang.",
-        popular: "Mashhur",
-        select_plan: "Tanlash",
-        
         plan_1_subtitle: "Kichik biznes yoki shaxsiy brend uchun vizitka sayt",
         p1_f1: "1-3 sahifali Landing Page (HTML/CSS)",
         p1_f2: "To'liq mobil moslashuvchanlik",
         p1_f3: "Bepul Domen ulab berish",
         p1_f4: "Tezkor yuklanish optimizatsiyasi",
-        
+        select_plan: "Tanlash",
+        popular: "Mashhur",
         plan_2_subtitle: "Mijoz yig'uvchi sayt + mukammal tizimlar ulanishi",
         p2_f1: "Premium UI/UX Landing Page",
         p2_f2: "Google Sheets (Jadval) integratsiyasi",
         p2_f3: "Telegram Bot & Guruhga bildirishnomalar",
         p2_f4: "Instagram API avtomatlashtirish ulanishi",
-        
         plan_3_subtitle: "Tayyor veb-sayt tizimi va mijozlar oqimi birga",
         p3_f1: "To'liq VIP Avtomatizatsiya paketi",
         p3_f2: "Facebook & Instagram Target sozlash",
         p3_f3: "Kreativ reklama matnlari va takliflar",
         p3_f4: "7 kunlik reklama monitoringi",
-        
-        // FAQ Section
         faq_title: "Ko'p beriladigan savollar",
         faq_desc: "Asosiy savollarga ochiq va aniq javoblarimiz.",
         faq_q1: "Saytga kelgan arizalarni qayerda ko'ramiz?",
@@ -72,294 +57,159 @@ const langData = {
         faq_a2: "Mijoz Instagram Direct yoki izohlarda ma'lum bir so'zni yozganda (masalan: 'narxi'), biz o'rnatgan API tizimi unga avtomatik ravishda sayt havolasini yoki maxsus taklifni yuboradi va mijozni sadoqatli xaridorga aylantiradi.",
         faq_q3: "Target reklama uchun budjetni kim beradi?",
         faq_a3: "Bizning xizmat narximiz faqatgina reklamani to'g'ri va professional sozlashni o'z ichiga oladi. Reklamaning kunlik yoki oylik budjeti (Meta kompaniyasiga to'lanadigan pul) mijoz tomonidan alohida taqdim etiladi.",
-        
-        // Order Form
         form_title: "Keling, loyihangizni boshlaymiz",
         form_desc: "Formani to'ldiring. Biz biznesingiz uchun eng mukammal raqamli yechimni taklif qilamiz.",
         form_label_name: "Ismingiz",
         form_placeholder_name: "Alisher",
         form_label_surname: "Familiyangiz",
-        form_placeholder_surname: "Alimov",
+        form_placeholder_surname: "Asimov",
         form_label_phone: "Telefon raqamingiz",
         form_placeholder_number: "+998",
         form_label_package: "Sizga qaysi paket mos keladi?",
         form_label_desc: "Loyiha haqida qisqacha tavsif (Ixtiyoriy)",
         form_submit: "Arizani yuborish",
-        
-        // Footer
         footer_text: "Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz."
     },
     ru: {
-        // Navigation
         nav_services: "Услуги",
         nav_portfolio: "Портфолио",
         nav_pricing: "Цены",
         nav_faq: "FAQ",
         nav_order_btn: "Заказать",
-        
-        // Hero Section
         hero_badge: "Landing Pages & Business Automation",
         hero_title_1: "Цифровые системы продаж",
         hero_title_2: "для вашего бизнеса",
-        hero_desc: "Мы создаем высококонверсионные и быстрые целевые страницы, автоматизируем заявки через Instagram API и Telegram-ботов с интеграцией в Google Таблицы, а также запускаем профессиональный таргет.",
+        hero_desc: "Мы создаем высококонверсионные Landing Page, автоматизируем заявки через Instagram API и Telegram-боты с интеграцией в Google Таблицы, а также запускаем профессиональный таргетинг.",
         hero_btn_start: "Начать проект",
         hero_btn_portfolio: "Наши работы",
-        stack_title: "Наши профессиональные инструменты",
-        
-        // Services
+        stack_title: "Профессиональные инструменты, которые мы используем",
         services_title: "Какие решения вам нужны?",
         services_desc: "Направления, которые выведут ваш бизнес на новый уровень.",
         service_1_title: "Premium Landing Pages",
-        service_1_desc: "Современные одностраничные сайты, привлекающие клиентов с первой секунды и работающие на ультра-скорости.",
+        service_1_desc: "Ультрабыстрые, современные и идеальные одностраничные сайты, привлекающие клиентов с первой секунды.",
         service_2_title: "Автоматизация сообщений и ботов",
-        service_2_desc: "Автоответы в Instagram Direct, подключение сайта к Telegram-боту, отправка лидов в Google Таблицы и группы в реальном времени.",
+        service_2_desc: "Автоматические ответы через Instagram API, подключение сайта к Telegram-боту, отправка заявок в Google Таблицы и группы в реальном времени.",
         service_3_title: "Таргетированная реклама (Meta Ads)",
-        service_3_desc: "Настройка профессионального таргета в Facebook и Instagram для привлечения готового потока клиентов на ваш сайт.",
-        
-        // Portfolio
-        portfolio_title: "Реальные проекты",
-        portfolio_desc: "Кейсы, доказывающие наше мастерство в реальном бизнесе.",
-        p1_title: "Страница заказа фаст-фуда",
-        p1_desc: "Система, где клиенты выбирают блюда, а при нажатии кнопки заказа все данные мгновенно уходят в Telegram-группу сотрудников и Google Таблицы.",
-        p2_title: "Премиум Лэндинг для клиники",
-        p2_desc: "Высококонверсионная веб-страница для медицинского центра. Настроен профессиональный таргет, заявки автоматически собираются в Google Sheets.",
-        p3_title: "Витрина книжного интернет-магазина",
-        p3_desc: "Сайт-каталог книг с удобной фильтрацией и красивым дизайном. Каждая заявка на покупку полностью интегрирована с базой данных.",
-        p4_title: "Галерея традиционных тапчанов",
-        p4_desc: "Интерактивный сайт-витрина, представляющий профессиональные чертежи и 3D-визуализации национальных и современных тапчанов.",
-        
-        // Pricing Table
+        service_3_desc: "Профессиональная настройка таргета в Facebook и Instagram для привлечения потока готовых клиентов на ваш сайт.",
+        portfolio_title: "Наши реальные проекты",
+        portfolio_desc: "Действующие реальные кейсы, доказывающие наше мастерство.",
+        p1_title: "Страница заказа Fast-Food",
+        p1_desc: "Система, где клиенты выбирают блюда и нажимают кнопку заказа, а все данные автоматически отправляются в Telegram-группу сотрудников кафе и в Google Таблицы.",
+        p2_title: "Премиум Landing для клиники",
+        p2_desc: "Веб-страница с высокой конверсией, созданная для медицинского центра. Настроена профессиональная реклама, заявки собираются напрямую в Google Sheets.",
+        p3_title: "Витрина онлайн-магазина книг",
+        p3_desc: "Сайт-каталог с красивой и удобной фильтрацией книжной продукции. Каждая заявка интегрирована с базой данных Google Таблиц.",
+        p4_title: "Сайт-галерея традиционных топчанов",
+        p4_desc: "Быстрая интерактивная витрина, представляющая профессиональные чертежи и фотографии национальных и современных дизайнов топчанов.",
         pricing_title: "Прозрачные тарифы и пакеты",
-        pricing_desc: "Выберите объем услуг, подходящий вашему бизнесу.",
-        popular: "Популярно",
-        select_plan: "Выбрать",
-        
+        pricing_desc: "Выберите необходимый объем услуг.",
         plan_1_subtitle: "Сайт-визитка для малого бизнеса или личного бренда",
-        p1_f1: "1-3 страничные Landing Page (HTML/CSS)",
-        p1_f2: "Полная мобильная адаптивность",
+        p1_f1: "Landing Page на 1-3 экрана (HTML/CSS)",
+        p1_f2: "Полная мобильная адаптация",
         p1_f3: "Бесплатное подключение домена",
         p1_f4: "Оптимизация скорости загрузки",
-        
-        plan_2_subtitle: "Сайт для сбора лидов + подключение автоматизации",
-        p2_f1: "Премиум UI/UX целевая страница",
-        p2_f2: "Интеграция с Google Sheets (Таблицы)",
-        p2_f3: "Уведомления в Telegram-бот и группы",
+        select_plan: "Выбрать",
+        popular: "Популярный",
+        plan_2_subtitle: "Сайт для сбора клиентов + подключение систем",
+        p2_f1: "Premium UI/UX Landing Page",
+        p2_f2: "Интеграция с Google Sheets",
+        p2_f3: "Уведомления в Telegram Бот и Группу",
         p2_f4: "Подключение автоматизации Instagram API",
-        
-        plan_3_subtitle: "Готовая система веб-сайта и поток клиентов вместе",
-        p3_f1: "Полный пакет VIP-автоматизации",
-        p3_f2: "Настройка таргета в Facebook и Instagram",
+        plan_3_subtitle: "Готовая система сайта + поток клиентов",
+        p3_f1: "Полный пакет VIP Автоматизации",
+        p3_f2: "Настройка таргета Facebook & Instagram",
         p3_f3: "Креативные рекламные тексты и офферы",
-        p3_f4: "7 дней активного мониторинга рекламы",
-        
-        // FAQ Section
+        p3_f4: "7 дней мониторинга рекламы",
         faq_title: "Часто задаваемые вопросы",
-        faq_desc: "Открытые и четкие ответы на самые частые вопросы.",
-        faq_q1: "Где мы будем видеть поступающие заявки?",
-        faq_a1: "Все заявки в реальном времени поступают в таблицу Google Sheets на вашем Google Диске. Также для удобства мы мгновенно дублируем их в вашу Telegram-группу через бота.",
+        faq_desc: "Открытые и четкие ответы на основные вопросы.",
+        faq_q1: "Где мы будем видеть заявки с сайта?",
+        faq_a1: "Все заявки в режиме реального времени попадают в файл Google Sheets на вашем Google Drive. Также для удобства мы за секунду перенаправляем их в вашу Telegram-группу через бота.",
         faq_q2: "Что дает автоматизация Instagram?",
-        faq_a2: "Когда клиент пишет кодовое слово в Директ или комментариях (например: 'цена'), система API автоматически отправляет ему ссылку на сайт или предложение, вовлекая в воронку продаж.",
-        faq_q3: "Кто предоставляет бюджет на таргет?",
-        faq_a3: "В стоимость нашей услуги входит только профессиональная настройка и ведение рекламы. Рекламный бюджет (деньги, списываемые Meta) оплачивается клиентом отдельно.",
-        
-        // Order Form
+        faq_a2: "Когда клиент пишет определенное слово в Direct или комментариях (например: 'цена'), установленная нами система API автоматически отправляет ему ссылку на сайт или спецпредложение, превращая его в лояльного покупателя.",
+        faq_q3: "Кто оплачивает бюджет на таргетированную рекламу?",
+        faq_a3: "Стоимость наших услуг включает только правильную и профессиональную настройку рекламы. Ежедневный или ежемесячный бюджет (деньги, выплачиваемые компании Meta) предоставляется клиентом отдельно.",
         form_title: "Давайте начнем ваш проект",
-        form_desc: "Заполните форму, и мы предложим идеальное цифровое решение для вашего бизнеса.",
+        form_desc: "Заполните форму. Мы предложим идеальное цифровое решение для вашего бизнеса.",
         form_label_name: "Ваше имя",
-        form_placeholder_name: "Иван",
-        form_label_surname: "Ваше Фамилия",
-        form_placeholder_surname: "Иванов",
-        form_label_phone: "Номер телефона",
-        form_placeholder_number: "+7",
+        form_placeholder_name: "Алишер",
+        form_label_surname: "Ваша фамилия",
+        form_placeholder_surname: "Асимов",
+        form_label_phone: "Ваш номер телефона",
+        form_placeholder_number: "+998",
         form_label_package: "Какой пакет вам подходит?",
         form_label_desc: "Краткое описание проекта (Необязательно)",
         form_submit: "Отправить заявку",
-        
-        // Footer
         footer_text: "Ваш профессиональный цифровой партнер по автоматизации бизнеса."
     },
     kg: {
-        // Navigation
         nav_services: "Кызматтар",
         nav_portfolio: "Портфолио",
-        nav_pricing: "Бааlar",
+        nav_pricing: "Баалар",
         nav_faq: "FAQ",
         nav_order_btn: "Буйрутма берүү",
-        
-        // Hero Section
         hero_badge: "Landing Pages & Business Automation",
-        hero_title_1: "Бизнесиңиз үчүн",
-        hero_title_2: "сатуу тутумдары",
-        hero_desc: "Биз кардарларды тартуучу ылдам Landing Page баракчаларын түзөбүз, Instagram API жана Telegram боттор аркылуу табыштамаларды автоматташтырып Google Sheets'ке туташтырабыз жана кесипкөй Таргет жарнамасын күйгүзөбүз.",
+        hero_title_1: "Сиздин бизнес үчүн",
+        hero_title_2: "санариптик сатуу системалары",
+        hero_desc: "Биз кардарларды тартуучу тез Landing Page'дерди түзөбүз, Instagram API жана Telegram боттор аркылуу табыштамаларды автоматташтырып Google Таблицаларга туташтырабыз жана кесипкөй Таргет жарнамаларын жүргүзөбүз.",
         hero_btn_start: "Долбоорду баштоо",
         hero_btn_portfolio: "Аткарылган иштер",
-        stack_title: "Биз колдонгон кесиптик куралдар",
-        
-        // Services
-        services_title: "Sizge kanday чечимдер керек?",
-        services_desc: "Бизнесиңизди жаңы деңгээлге көтөрүүчү багыттарыбыз.",
+        stack_title: "Биз колдонгон кесипкөй куралдар",
+        services_title: "Сизге кандай чечимдер керек?",
+        services_desc: "Бизнесиңизди жаңы деңгээлге чыгаруучу багыттарыбыз.",
         service_1_title: "Premium Landing Pages",
-        service_1_desc: "Кардарды биринчи секунддан тарткан, өтө тез иштеген заманбап жана кемчиликсиз бир барактуу веб-сайттар.",
+        service_1_desc: "Кардарларды биринчи секунддан эле тартуучу, өтө тез жүктөлүүчү, заманбап жана идеалдуу бир барактуу веб-сайттар.",
         service_2_title: "Кабарлар жана Бот Автоматташтыруу",
-        service_2_desc: "Instagram API аркылуу автоматтык жоопторdu жөнөтүү, сайтты Telegram ботко туташтыруу, табыштамаларды түз Google Таблицага жөнөтүү.",
-        service_3_title: "Таргет Жарнамасы (Meta Ads)",
-        service_3_desc: "Даяр кардарлардын агымын веб-сайтыңызга алып келүү үчүн Facebook жана Instagram тармактарында кесипкөй жарнама жөндөө.",
-        
-        // Portfolio
-        portfolio_title: "Реалдуу Долбоорлор",
-        portfolio_desc: "Биздин чеберчилигибизди далилдеген иш жүзүндөгү реалдуу кейстер.",
-        p1_title: "Фаст-Фуд буйрутма баракчасы",
-        p1_desc: "Кардарлар тамактарды тандап буйрутма бергенде, бардык маалыматтар автоматтык түрдө кызматкерлердин Telegram группасына жана Google Таблицага түшкөн система.",
-        p2_title: "Клиника үчүн Премиум Лэндинг",
-        p2_desc: "Медициналык борбор үчүн түзүлгөн жогорку конверсиялуу баракча. Кесипкөй таргет жарнамасы жөндөлгөн, табыштамалар түз Google Sheets таблицасына чогулат.",
-        p3_title: "Онлайн Китеп Дүкөнү Витринасы",
-        p3_desc: "Китептерди кооз жана оңой чыпкалоо мүмкүнчүлүгү бар каталог сайт. Ар бир сатып алуу өтүнмөсү Google Таблица базасы менен интеграцияланган.",
-        p4_title: "Салттуу Тапчан Галерея Сайты",
-        p4_desc: "Улуттук жана заманбап тапчандардын кесиптик чиймелерин жана 3D моделдерин көрсөткөн тез иштеген интерактивдүү витрина-сайт.",
-        
-        // Pricing Table
-        pricing_title: "Ачык-айкын тарифтер жана пакеттер",
-        pricing_desc: "Бизнесиңизге ылайыктуу кызматтардын көлөмүн тандаңыз.",
-        popular: "Популярдуу",
-        select_plan: "Тандоо",
-        
-        plan_1_subtitle: "Чакан бизнес же жеке бренд үчүн визитка сайт",
-        p1_f1: "1-3 барактан турган Landing Page (HTML/CSS)",
+        service_2_desc: "Instagram API аркылуу автоматтык жоопторду жөнөтүү, сайтты Telegram ботко туташтыруу, табыштамаларды реалдуу убакытта Google Таблицаларга жана топторго жөнөтүү.",
+        service_3_title: "Таргет Жарнама (Meta Ads)",
+        service_3_desc: "Түзүлгөн сайтыңызга даяр кардарлар агымын алып келүү үчүн Facebook жана Instagram социалдык тармактарында кесипкөй таргетти жөндөө.",
+        portfolio_title: "Реалдуу Долбоорлорубуз",
+        portfolio_desc: "Биздин чеберчилигибизди далилдеген реалдуу кейстер.",
+        p1_title: "Fast-Food Буйрутма Барагы",
+        p1_desc: "Кардарлар тамактарды тандап, буйрутма баскычын басканда, бардык маалыматтар автоматтык түрдө кафе кызматкерлеринин Telegram тобуна жана Google Таблицаларга жетүүчү система.",
+        p2_title: "Клиника үчүн Премиум Landing",
+        p2_desc: "Медициналык борбор үчүн түзүлгөн конверсиясы жогору веб-баракча. Ага кесипкөй таргет жарнамасы жөндөлгөн, табыштамалар түздөн-түз Google Sheets таблицаларына чогултулат.",
+        p3_title: "Онлайн Китеп Дүкөнү",
+        p3_desc: "Китеп продукцияларын кооз жана ыңгайлуу чыпкалоо мүмкүнчүлүгүнө ээ каталог-сайт. Ар бир сатып алуу табыштамасы Google Таблицалар базасына интеграцияланган.",
+        p4_title: "Салттуу Топчан Галерея Сайты",
+        p4_desc: "Улуттук жана заманбап топчан дизайндарынын кесипкөй чиймелерин жана сүрөттөрүн көрсөтүүчү, тез иштөөчү интерактивдүү витрина-баракча.",
+        pricing_title: "Ачык Тарифтер жана Пакеттер",
+        pricing_desc: "Сизге керектүү кызматтардын көлөмүн тандаңыз.",
+        plan_1_subtitle: "Кичи бизнес же жеке бренд үчүн визитка-сайт",
+        p1_f1: "1-3 барактуу Landing Page (HTML/CSS)",
         p1_f2: "Толук мобилдик адаптация",
-        p1_f3: "Акысыз Домен туташтыруу",
-        p1_f4: "Ыкчам жүктөө оптималдаштыруусу",
-        
-        plan_2_subtitle: "Кардар чогултуучу сайт + автоматташтыруу тутумдарын туташтыруу",
-        p2_f1: "Премиум UI/UX Landing Page",
-        p2_f2: "Google Sheets (Таблица) интеграцияси",
-        p2_f3: "Telegram Бот жана группаларга билдирүүлөр",
-        p2_f4: "Instagram API автоматташтырууну туташтыруу",
-        
-        plan_3_subtitle: "Даяр веб-сайт тутуму жана кардарлардын агымы бирге",
+        p1_f3: "Доменди акысыз туташтыруу",
+        p1_f4: "Тез жүктөлүү оптимизациясы",
+        select_plan: "Тандоо",
+        popular: "Популярдуу",
+        plan_2_subtitle: "Кардар чогултуучу сайт + системаларды туташтыруу",
+        p2_f1: "Premium UI/UX Landing Page",
+        p2_f2: "Google Sheets интеграциясы",
+        p2_f3: "Telegram Бот жана Топко билдирмелер",
+        p2_f4: "Instagram API автоматташтыруу туташуусу",
+        plan_3_subtitle: "Даяр веб-сайт системасы жана кардарлар агымы чогуу",
         p3_f1: "Толук VIP Автоматташтыруу пакети",
-        p3_f2: "Facebook жана Instagram Таргет жөндөө",
-        p3_f3: "Креативдүү жарнамалык тексттер жана сунуштар",
-        p3_f4: "7 күндүк жарнамалык мониторинг",
-        
-        // FAQ Section
+        p3_f2: "Facebook & Instagram Таргет жөндөө",
+        p3_f3: "Креативдүү жарнама тексттери жана сунуштар",
+        p3_f4: "7 күндүк жарнама мониторинги",
         faq_title: "Көп берилүүчү суроолор",
-        faq_desc: "Негизги суроолорго ачык жана так жоопторубуz.",
-        faq_q1: "Сайтка түшкөн табыштамаларды кайдан көрөбүз?",
-        faq_a1: "Бардык табыштамалар реалдуу убакыт режиминде сиздин Google Drive эсебиңиздеги Google Sheets файлына түшөт. Ошондой эле, ыңгайлуулук үчүн аларды Telegram группаңызга бот аркылуу жөнөтөбүз.",
+        faq_desc: "Негизги суроолорго ачык жана так жоопторубуз.",
+        faq_q1: "Сайтка келген табыштамаларды кайдан көрөбүз?",
+        faq_a1: "Бардык табыштамалар реалдуу убакыт режиминде сиздин Google Drive аккаунтуңуздагы Google Sheets (Таблица) файлына түшөт. Ошондой эле ыңгайлуулук үчүн аларды Telegram тобуңузга бот аркылуу бир секундда багыттап беребиз.",
         faq_q2: "Instagram автоматташтыруу эмне берет?",
-        faq_a2: "Кардар Instagram Direct же комментарийлерде белгилүү бир сөздү жазганда (мисалы: 'баасы'), биз орноткон API тутуму ага автоматтык түрдө сайттын шилтемесин же атайын сунушту жөнөтүп, кардарды сатып алуучуга айлантат.",
-        faq_q3: "Таргет жарнамасы үчүн бюджетти ким берет?",
-        faq_a3: "Биздин кызмат баасы жарнаманы туура жана кесипкөй жөндөөнү гана камтыйт. Жарнаманын күнүмдүк же айлык бюджети (Meta компаниясына төлөнүүчү каражат) кардар тарабынан өзүнчө берилет.",
-        
-        // Order Form
-        form_title: "Долбооруңузду баштайлы",
-        form_desc: "Форманы толтуруңуз. Биз сиздин бизнесиңиз үчүн эң мыкты санариптик чечимди сунуштайбыз.",
+        faq_a2: "Кардар Instagram Direct же комментарийлерде белгилүү бир сөздү жазганда (мисалы: 'баасы'), биз орноткон API системасы ага автоматтык түрдө сайттын шилтемесин же атайын сунушту жөнөтөт жана кардарды лоялдуу сатып алуучуга айлантат.",
+        faq_q3: "Таргет жарнама үчүн бюджетти ким берет?",
+        faq_a3: "Биздин кызматтын баасы жарнаманы туура жана кесипкөй жөндөөнү гана камтыйт. Жарнаманын күнүмдүк же айлык бюджети (Meta компаниясына төлөнүүчү акча) кардар тарабынан өзүнчө берилет.",
+        form_title: "Келиңиз, долбооруңузду баштайбыз",
+        form_desc: "Форманы толтуруңуз. Биз бизнесиңиз үчүн эң мыкты санариптик чечимди сунуштайбыз.",
         form_label_name: "Атыңыз",
-        form_placeholder_name: "Алим",
+        form_placeholder_name: "Алишер",
         form_label_surname: "Фамилияңыз",
-        form_placeholder_surname: "Алимов",
+        form_placeholder_surname: "Асимов",
         form_label_phone: "Телефон номериңиз",
-        form_placeholder_number: "+996",
-        form_label_package: "Sizge kaysi paket ылайыктуу?",
+        form_placeholder_number: "+998",
+        form_label_package: "Сизге кайсы пакет туура келет?",
         form_label_desc: "Долбоор жөнүндө кыскача маалымат (Милдеттүү эмес)",
         form_submit: "Табыштаманы жөнөтүү",
-        
-        // Footer
         footer_text: "Бизнести автоматташтыруу боюнча сиздин кесипкөй санариптик өнөктөшүңүз."
     }
 };
-
-// --- MULTI-LANGUAGE SWITCHER ENGINE ---
-
-// Функция перевода текстов на странице
-function applyLanguage(lang) {
-    if (!lang) return;
-    lang = lang.toLowerCase().trim(); 
-    
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        
-        if (langData[lang] && langData[lang][key]) {
-            const translation = langData[lang][key];
-
-            // Agar element INPUT yoki TEXTAREA bo'lsa
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                // Tugma bo'lsa (masalan: <input type="submit">)
-                if (el.type === 'submit' || el.type === 'button') {
-                    el.value = translation;
-                } else {
-                    // Oddiy yozuv maydoni bo'lsa placeholder'ni o'zgartiramiz
-                    el.placeholder = translation;
-                }
-            } else {
-                // Oddiy matnlar (label, p, h1, span) uchun
-                el.innerText = translation;
-            }
-        }
-    });
-}
-
-// Главная функция инициализации языка
-function initLanguageSwitcher() {
-    const langSelect = document.getElementById('langSelect');
-    if (!langSelect) return;
-
-    // Шаг 1: По умолчанию ставим Русский ('ru')
-    let targetLang = 'ru'; 
-
-    // Шаг 2: Безопасное чтение из localStorage (try-catch защищает внутри iframe/Telegram Mini App)
-    try {
-        const saved = localStorage.getItem('selectedLang');
-        if (saved && langData[saved.toLowerCase().trim()]) {
-            targetLang = saved.toLowerCase().trim();
-        }
-    } catch (error) {
-        console.warn("LocalStorage заблокирован настройками безопасности. Используется язык по умолчанию:", error);
-    }
-
-    // Шаг 3: Жестко фиксируем значение селекта
-    langSelect.value = targetLang;
-    
-    // Сбрасываем старые атрибуты selected и прописываем актуальный для HTML
-    langSelect.querySelectorAll('option').forEach(opt => opt.removeAttribute('selected'));
-    const currentOption = langSelect.querySelector(`option[value="${targetLang}"]`);
-    if (currentOption) {
-        currentOption.setAttribute('selected', 'selected');
-        currentOption.selected = true;
-    }
-
-    // Шаг 4: Переводим страницу
-    applyLanguage(targetLang);
-}
-
-// --- НАДЕЖНЫЙ СЛУШАТЕЛЬ ЗАГРУЗКИ СТРАНИЦЫ ---
-
-// 1. Срабатывает сразу при готовности DOM дерева
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
-} else {
-    initLanguageSwitcher();
-}
-
-// 2. Срабатывает повторно после полной загрузки всех сторонних скриптов/картинок (Финальная страховка)
-window.addEventListener('load', initLanguageSwitcher);
-
-// --- ОБРАБОТКА РУЧНОГО ИЗМЕНЕНИЯ ЯЗЫКА ---
-document.addEventListener('DOMContentLoaded', () => {
-    const langSelect = document.getElementById('langSelect');
-    if (langSelect) {
-        langSelect.addEventListener('change', (e) => {
-            const chosenLang = e.target.value.toLowerCase().trim();
-            
-            // Моментально меняем язык на экране
-            applyLanguage(chosenLang);
-            
-            // Сохраняем выбор в xранилище браузера
-            try {
-                localStorage.setItem('selectedLang', chosenLang);
-            } catch (err) {
-                console.error("Не удалось сохранить выбор языка:", err);
-            }
-        });
-    }
-});
