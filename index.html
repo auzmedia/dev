@@ -250,7 +250,7 @@
         </div>
     </section>
 
-    <!-- ORDER FORM SECTION -->
+   <!-- ORDER FORM SECTION -->
     <section id="order" class="py-24 px-6">
         <div class="max-w-3xl mx-auto bg-white dark:bg-slate-800 p-8 md:p-14 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-lg">
             <h2 data-i18n="form_title" class="text-3xl md:text-5xl font-black mb-4 text-center tracking-tight dark:text-white">Keling, loyihangizni boshlaymiz</h2>
@@ -293,32 +293,6 @@
             </form>
         </div>
     </section>
-
-    <!-- VERIFICATION MODAL -->
-    <div id="verifyModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4">
-        <div class="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl p-6 shadow-2xl transform transition-all border border-slate-200 dark:border-slate-700">
-            <div class="text-center mb-6">
-                <h3 id="modalTitle" class="text-lg font-bold text-slate-800 dark:text-white">Raqamni tekshirish</h3>
-                <p id="modalStatus" class="text-sm text-slate-500 dark:text-gray-400 mt-1">Tizim aloqa kanallarini tekshirmoqda...</p>
-            </div>
-            <div id="modalLoader" class="flex justify-center my-4">
-                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-            </div>
-            <div id="codeAuthSection" class="hidden space-y-4">
-                <p class="text-xs text-center text-amber-600 dark:text-amber-400 font-medium bg-amber-50 dark:bg-amber-950/30 p-2 rounded-lg">
-                    Demo rejim: Tasdiqlash kodi sifatida <span class="font-bold">7777</span> kiriting.
-                </p>
-                <input type="text" id="verifyCode" placeholder="0000" maxlength="4" class="w-full text-center text-2xl tracking-widest font-mono bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl p-3 outline-none focus:border-blue-500 dark:text-white">
-                <button id="btnConfirmCode" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl transition text-sm">
-                    Kodni tasdiqlash
-                </button>
-            </div>
-            <div class="mt-4 text-center">
-                <button onclick="closeModal()" class="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition cursor-pointer">Bekor qilish</button>
-            </div>
-        </div>
-    </div>
-
     <!-- FLOATING TELEGRAM BUTTON -->
     <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" aria-label="Telegram" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl shadow-lg hover:scale-110 hover:bg-blue-400 transition-all z-50 animate-bounce">
         <i class="fa-brands fa-telegram"></i>
