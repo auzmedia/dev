@@ -74,7 +74,8 @@ const translations = {
         ish_text: "Ish vaqti.",
         kun_text: "Dush - Juma:",
         shanba_text: "Shanba:",
-        dam_text: "Yakshanba: Dam olish",
+        dam_text: "Yakshanba:",
+        damm_text: "Dam olish",
         social_text: "Bizni kuzating",
         copy_text: "&copy; 2026 DEV.ALOSHIY.COM — Barcha huquqlar himoyalangan."
     },
@@ -153,7 +154,8 @@ const translations = {
         ish_text: "График работы.",
         kun_text: "Пониделник - Пятница:",
         shanba_text: "Суббота:",
-        dam_text: "Воскресенье: Выходной.",
+        dam_text: "Воскресенье:",
+        damm_text: "Выходной.",
         social_text: "Подписывайтесь на нас",
         copy_text: "&copy; 2026 DEV.ALOSHIY.COM — Все права защищены.",
     },
@@ -232,7 +234,8 @@ const translations = {
         ish_text: "Иштөө убактысы.",
         kun_text: "Дүйшөмбү - Жума:",
         shanba_text: "Ишемби:",
-        dam_text: "Жекшемби: Эс алуу күнү",
+        dam_text: "Жекшемби:",
+        damm_text: "Эс алуу күнү",
         social_text: "Бизге кошулуңуз",
         copy_text: "&copy; 2026 DEV.ALOSHIY.COM — Бардык укуктар корголгон."
     }
