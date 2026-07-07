@@ -289,17 +289,57 @@
         <i class="fa-brands fa-telegram"></i>
     </a>
 
-    <footer class="py-12 border-t border-slate-200 dark:border-white/5 bg-white dark:bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div>
-                <div class="text-2xl font-black tracking-tight mb-2 dark:text-white">ALOSHIY<span class="text-blue-500">.DEV</span></div>
-                <p data-i18n="footer_text" class="text-slate-500 dark:text-gray-400 text-sm font-light">Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz.</p>
-            </div>
-            <div class="text-center text-slate-400 text-xs">
-                <p>&copy; 2026 ALOSHIY.DEV — Barcha huquqlar himoyalangan.</p>
+<footer class="py-16 border-t border-slate-200 dark:border-white/5 bg-white dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+        
+        <!-- Logo va Tavsif -->
+        <div class="col-span-1 md:col-span-1">
+            <div class="text-2xl font-black tracking-tight mb-4 dark:text-white">ALOSHIY<span class="text-blue-500">.DEV</span></div>
+            <p data-i18n="footer_text" class="text-slate-500 dark:text-gray-400 text-sm font-light leading-relaxed">Biznesingizni avtomatlashtirish va raqamli tizimlarni joriy etish bo'yicha sizning professional hamkoringiz.</p>
+        </div>
+
+        <!-- Kontaktlar -->
+        <div>
+            <h4 class="font-bold text-lg mb-6 dark:text-white uppercase tracking-wider text-sm">Kontaktlar</h4>
+            <ul class="space-y-4 text-sm text-slate-500 dark:text-gray-400">
+                <li class="flex items-center gap-3 hover:text-blue-500 transition">
+                    <i class="fa-solid fa-phone"></i> +998 (99) 000-00-00
+                </li>
+                <li class="flex items-center gap-3 hover:text-blue-500 transition">
+                    <i class="fa-solid fa-envelope"></i> hello@aloshiy.dev
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot mt-1"></i> Toshkent sh., Chilonzor tumani, 5-mavze
+                </li>
+            </ul>
+        </div>
+
+        <!-- Ish vaqti -->
+        <div>
+            <h4 class="font-bold text-lg mb-6 dark:text-white uppercase tracking-wider text-sm">Ish vaqti</h4>
+            <ul class="space-y-2 text-sm text-slate-500 dark:text-gray-400">
+                <li class="flex justify-between"><span>Dush - Juma:</span> <span class="text-blue-500 font-bold">09:00 - 18:00</span></li>
+                <li class="flex justify-between"><span>Shanba:</span> <span class="text-slate-400">10:00 - 15:00</span></li>
+                <li class="flex justify-between"><span>Yakshanba:</span> <span class="text-red-500">Dam olish</span></li>
+            </ul>
+        </div>
+
+        <!-- Ijtimoiy tarmoqlar -->
+        <div>
+            <h4 class="font-bold text-lg mb-6 dark:text-white uppercase tracking-wider text-sm">Bizni kuzating</h4>
+            <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-900 hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-900 hover:bg-slate-800 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-200 dark:border-white/5 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 ALOSHIY.DEV — Barcha huquqlar himoyalangan.</p>
+    </div>
+</footer>
     
     <script src="lang.js"></script>
     <script src="script.js"></script>
