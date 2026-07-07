@@ -68,7 +68,15 @@ const translations = {
         form_label_package: "Sizga qaysi paket mos keladi?",
         form_label_desc: "Loyiha haqida qisqacha tavsif (Ixtiyoriy)",
         form_submit: "Arizani yuborish",
-        footer_text: "Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz."
+        footer_text: "Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz.",
+        contacts_text: "Kontaktlar",
+        adress_text: "Toshkent sh., Chilonzor tumani, 5-mavze.",
+        ish_text: "Ish vaqti.",
+        kun_text: "Dush - Juma:",
+        shanba_text: "Shanba:",
+        dam_text: "Yakshanba: Dam olish",
+        social_text: "Bizni kuzating",
+        copy_text: "&copy; 2026 DEV.ALOSHIY.COM — Barcha huquqlar himoyalangan."
     },
     ru: {
         nav_services: "Услуги",
@@ -139,7 +147,15 @@ const translations = {
         form_label_package: "Какой пакет вам подходит?",
         form_label_desc: "Краткое описание проекта (Необязательно)",
         form_submit: "Отправить заявку",
-        footer_text: "Ваш профессиональный цифровой партнер по автоматизации бизнеса."
+        footer_text: "Ваш профессиональный цифровой партнер по автоматизации бизнеса.",
+        contacts_text: "Контакты",
+        adress_text: "г.Ош., ул.Айни, 114.",
+        ish_text: "График работы.",
+        kun_text: "Пониделник - Пятница:",
+        shanba_text: "Суббота:",
+        dam_text: "Воскресенье: Выходной.",
+        social_text: "Подписывайтесь на нас",
+        copy_text: "&copy; 2026 DEV.ALOSHIY.COM — Все права защищены.",
     },
     kg: {
         nav_services: "Кызматтар",
@@ -210,6 +226,14 @@ const translations = {
         form_label_package: "Сизге кайсы пакет туура келет?",
         form_label_desc: "Долбоор жөнүндө кыскача маалымат (Милдеттүү эмес)",
         form_submit: "Табыштаманы жөнөтүү",
-        footer_text: "Бизнести автоматташтыруу боюнча сиздин кесипкөй санариптик өнөктөшүңүз."
+        footer_text: "Бизнести автоматташтыруу боюнча сиздин кесипкөй санариптик өнөктөшүңүз.",
+        contacts_text: "Байланыш маалыматы",
+        adress_text: "Ош шаары, Айни көчөсү, 114.",
+        ish_text: "Иштөө убактысы.",
+        kun_text: "Дүйшөмбү - Жума:",
+        shanba_text: "Ишемби:",
+        dam_text: "Жекшемби: Эс алуу күнү",
+        social_text: "Бизге кошулуңуз",
+        copy_text: "&copy; 2026 DEV.ALOSHIY.COM — Бардык укуктар корголгон."
     }
 };
