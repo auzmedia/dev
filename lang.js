@@ -70,7 +70,7 @@ const translations = {
         form_submit: "Arizani yuborish",
         footer_text: "Biznesingizni avtomatlashtirish bo'yicha sizning professional raqamli hamkoringiz.",
         contacts_text: "Kontaktlar",
-        adress_text: "Toshkent sh., Chilonzor tumani, 5-mavze.",
+        adress_text: "Toshkent sh., Chilonzor tumani, 5-mavze",
         ish_text: "Ish vaqti.",
         kun_text: "Dush - Juma:",
         shanba_text: "Shanba:",
